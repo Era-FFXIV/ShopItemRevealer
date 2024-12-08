@@ -1,0 +1,14 @@
+{
+  "Author": "Era",
+  "Name": "Shop Item Revealer",
+  "Punchline": "Shows you what items vendors won't sell you yet.",
+  "Description": "Opens a window when speaking with a supported vendor, showing items that are not unlocked and what their conditions are. It checks quests, achievements, and reputation requirements.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "utility",
+    "vendor",
+    "shop"
+  ],
+  "RepoUrl": "https://github.com/Era-FFXIV/ShopItemRevealer",
+  "AcceptsFeedback": true
+}
