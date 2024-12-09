@@ -2,7 +2,6 @@
 using Dalamud.Interface.Windowing;
 using Dalamud.Interface.Utility.Raii;
 using ImGuiNET;
-using Serilog;
 using ShopItemRevealer.Configuration;
 using ShopItemRevealer.Game;
 using ShopItemRevealer.Game.Shops;
@@ -49,7 +48,7 @@ namespace ShopItemRevealer.UI.Windows
                 var npc = sm.Npcs.FirstOrDefault(n => n.NpcId == gm.LastTarget);
                 if (npc == null)
                 {
-                    Log.Error("NPC not found in shop list.");
+                    Dalamud.Log.Error("NPC not found in shop list.");
                     return;
                 }
                 Items = sm.GetShopItems(npc);
