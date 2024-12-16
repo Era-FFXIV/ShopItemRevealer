@@ -41,7 +41,7 @@ namespace ShopItemRevealer.Game.Shops
             if (requirement.GetType() == typeof(BeastTribeItem)) 
             {
                 var item = (BeastTribeItem)RequirementObject;
-                ReputationValue = ReputationManager.CalculateReputation(item.Quest!.BeastReputationRank, item.Quest.BeastReputationValue);
+                ReputationValue = ReputationManager.CalculateReputation((int)item.Quest!.BeastReputationRank, item.Quest.BeastReputationValue);
             }
         }
         public bool MeetsRequirement()

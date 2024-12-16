@@ -70,7 +70,7 @@ namespace ShopItemRevealer.Game.Player
             int questCount = 0;
             for (var i = currentRank.Rank; i < tribe.MaxRank; i++)
             {
-                var rep = SheetManager.BeastReputationRankSheet.GetRow(i);
+                var rep = SheetManager.BeastReputationRankSheet.GetRow((uint)i);
                 var questPool = quests.Where(x => x.BeastReputationRank.RowId == i).ToList();
                 double repGiven = questPool.Max(x => x.ReputationReward);
                 // if 0 rep given, use previous rank's rep given

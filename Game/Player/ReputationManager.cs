@@ -5,10 +5,10 @@ namespace ShopItemRevealer.Game.Player
 {
     internal static class ReputationManager
     {
-        internal class Reputation(BeastTribe tribe, uint rank, uint value)
+        internal class Reputation(BeastTribe tribe, int rank, uint value)
         {
             public BeastTribe BeastTribe { get; set; } = tribe ?? new BeastTribe(0);
-            public uint Rank { get; set; } = rank;
+            public int Rank { get; set; } = rank;
             public uint Value { get; set; } = value;
         }
         internal static List<uint> CumulativeReputation { get; set; } = [];
@@ -33,9 +33,10 @@ namespace ShopItemRevealer.Game.Player
                 var tribe = PlayerManager.GetBeastTribe(i);
                 unsafe
                 {
-                    var rep = QuestManager.Instance()->GetBeastReputationById(i);
-                    var calculatedRep = CalculateReputation((uint)(rep->Rank < 1 ? 1 : rep->Rank), rep->Value);
-                    scan.Add(new Reputation(tribe, rep->Rank, calculatedRep));
+                    var rep = QuestManager.Instance()->GetBeastReputationById(tribe.Id);
+                    Dalamud.Log.Debug($"Scanning reputation for tribe {tribe.Name} with rank {rep->Rank & 0x7F} and value {rep->Value}");
+                    var calculatedRep = CalculateReputation(rep->Rank & 0x7F, rep->Value);
+                    scan.Add(new Reputation(tribe, rep->Rank & 0x7F, calculatedRep));
                 }
             }
             CurrentReputation = scan;
@@ -51,7 +52,7 @@ namespace ShopItemRevealer.Game.Player
             var r = CurrentReputation.First(CurrentReputation => CurrentReputation.BeastTribe.Id == beastTribeId);
             return r;
         }
-        internal static uint CalculateReputation(uint rank, uint reputation)
+        internal static uint CalculateReputation(int rank, uint reputation)
         {
             if (rank == 0) return 0;
             return CumulativeReputation[(int)rank-1] + reputation;
