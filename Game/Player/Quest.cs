@@ -1,20 +1,60 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game;
 
 namespace ShopItemRevealer.Game.Player
 {
-    internal class Quest : IGameInfo
+    /// <summary>
+    /// Represents a quest in the game.
+    /// </summary>
+    public class Quest : IGameInfo
     {
+        /// <summary>
+        /// Gets the ID of the quest.
+        /// </summary>
         public uint Id { get; private set; }
+
+        /// <summary>
+        /// Gets the name of the quest.
+        /// </summary>
         public string Name { get; init; } = null!;
+
+        /// <summary>
+        /// Gets a value indicating whether the quest is completed.
+        /// </summary>
         public bool IsCompleted { get; init; } = false;
+
+        /// <summary>
+        /// Gets the beast reputation rank required for the quest.
+        /// </summary>
         public uint BeastReputationRank { get; init; } = 0;
+
+        /// <summary>
+        /// Gets the name of the beast reputation rank required for the quest.
+        /// </summary>
         public string BeastReputationRankName { get; init; } = "None";
+
+        /// <summary>
+        /// Gets the beast reputation value required for the quest.
+        /// </summary>
         public uint BeastReputationValue { get; init; } = 0;
+
+        /// <summary>
+        /// Gets the expansion associated with the quest.
+        /// </summary>
         public string Expansion { get; init; } = "None";
+
+        /// <summary>
+        /// Returns a string representation of the quest.
+        /// </summary>
+        /// <returns>A string representing the quest.</returns>
         public override string ToString()
         {
             return $"Quest: {Name}";
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Quest"/> class with the specified ID.
+        /// </summary>
+        /// <param name="id">The ID of the quest.</param>
         public Quest(uint id)
         {
             Id = id;

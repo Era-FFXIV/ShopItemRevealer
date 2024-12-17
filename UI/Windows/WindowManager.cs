@@ -1,11 +1,14 @@
-﻿using Dalamud.Interface.Utility;
+using Dalamud.Interface.Utility;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
 using System.Numerics;
 
 namespace ShopItemRevealer.UI.Windows
 {
-    internal class WindowManager : IManager
+    /// <summary>
+    /// Manages the windows for the ShopItemRevealer plugin.
+    /// </summary>
+    public class WindowManager : IManager
     {
         private ShopItemRevealer Plugin { get; set; } = null!;
         public static Vector2 IconSize = ImGuiHelpers.ScaledVector2(40, 40);
@@ -23,13 +26,27 @@ namespace ShopItemRevealer.UI.Windows
         internal WindowSystem WindowSystem { get; private set; } = new(ShopItemRevealer.Name);
         public MainWindow MainWindow { get; private set; } = null!;
 
+        /// <summary>
+        /// Calculates the width of the specified text.
+        /// </summary>
+        /// <param name="text">The text to measure.</param>
+        /// <returns>The width of the text.</returns>
         public static float TextWidth(string text) => ImGui.CalcTextSize(text).X + ItemSpacing.X;
+
+        /// <summary>
+        /// Disposes the window manager and removes all windows.
+        /// </summary>
         public void Dispose()
         {
             WindowSystem.RemoveAllWindows();
             Dalamud.PluginInterface.UiBuilder.Draw -= MainWindow.Draw;
             Dalamud.PluginInterface.UiBuilder.OpenMainUi -= MainWindow.HandleMainUiOpen;
         }
+
+        /// <summary>
+        /// Initializes the window manager with the specified plugin.
+        /// </summary>
+        /// <param name="plugin">The plugin instance.</param>
         public void Initialize(ShopItemRevealer plugin)
         {
             Plugin = plugin;

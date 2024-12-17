@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.ClientState.Objects.Enums;
+using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Plugin.Services;
 using ShopItemRevealer.Game.Addons;
@@ -6,22 +6,41 @@ using ShopItemRevealer.Game.Shops;
 
 namespace ShopItemRevealer.Game
 {
-    internal partial class GameManager : IManager
+    /// <summary>
+    /// Manages the game-related functionality for the ShopItemRevealer plugin.
+    /// </summary>
+    public partial class GameManager : IManager
     {
-        private ShopItemRevealer Plugin { get; set; } = null!;
+        /// <summary>
+        /// Gets the AddonShopExchangeCurrency instance.
+        /// </summary>
         public AddonShopExchangeCurrency AddonShopExchangeCurrency { get; private set; } = null!;
-        public uint LastTarget { get; private set; }
-        public void Dispose()
-        {
-            Dalamud.Framework.Update -= OnFrameworkUpdate;
-            AddonShopExchangeCurrency.Dispose();
-        }
 
+        /// <summary>
+        /// Gets the ID of the last targeted NPC.
+        /// </summary>
+        public uint LastTarget { get; private set; }
+
+        private ShopItemRevealer Plugin { get; set; } = null!;
+
+        /// <summary>
+        /// Initializes the game manager with the specified plugin.
+        /// </summary>
+        /// <param name="plugin">The plugin instance.</param>
         public void Initialize(ShopItemRevealer plugin)
         {
             Plugin = plugin;
             AddonShopExchangeCurrency = new AddonShopExchangeCurrency(plugin);
             Dalamud.Framework.Update += OnFrameworkUpdate;
+        }
+
+        /// <summary>
+        /// Disposes the game manager and unsubscribes from events.
+        /// </summary>
+        public void Dispose()
+        {
+            Dalamud.Framework.Update -= OnFrameworkUpdate;
+            AddonShopExchangeCurrency.Dispose();
         }
 
         private void OnFrameworkUpdate(IFramework framework)
@@ -36,6 +55,7 @@ namespace ShopItemRevealer.Game
                 }
             }
         }
+
         private void HandleNpcTargeted(IGameObject npc)
         {
             if (npc.ObjectKind != ObjectKind.EventNpc) return;

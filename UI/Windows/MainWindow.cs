@@ -1,4 +1,4 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Dalamud.Interface.Windowing;
 using Dalamud.Interface.Utility.Raii;
 using ImGuiNET;
@@ -10,33 +10,53 @@ using Dalamud.Game.Text.SeStringHandling;
 using ShopItemRevealer.Game.Player;
 using Newtonsoft.Json;
 
-
 namespace ShopItemRevealer.UI.Windows
 {
-    internal class MainWindow: Window, IDisposable
+    /// <summary>
+    /// Represents the main window of the ShopItemRevealer plugin.
+    /// </summary>
+    public class MainWindow : Window, IDisposable
     {
-        public ShopItemRevealer Plugin { get; private set; }
-        public readonly uint MinSize = 400;
-        private List<ShopItem> Items { get; set; } = [];
-        private List<ShopItem> UnobtainableItems { get; set; } = [];
-        private Dictionary<ShopItem, int> QuestsNeeded { get; set; } = [];
+        private readonly ShopItemRevealer Plugin;
+        private const uint MinSize = 400;
+        private List<ShopItem> Items { get; set; } = new();
+        private List<ShopItem> UnobtainableItems { get; set; } = new();
+        private Dictionary<ShopItem, int> QuestsNeeded { get; set; } = new();
 
         private uint SelectedNpcId { get; set; } = 0;
         private bool ShowOnlyUnobtainableItems { get; set; } = false;
-        private List<uint> HideForNpcIds { get; set; } = [];
+        private List<uint> HideForNpcIds { get; set; } = new();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
+        /// <param name="name">The name of the window.</param>
+        /// <param name="plugin">The plugin instance.</param>
         public MainWindow(string name, ShopItemRevealer plugin) : base(name, ImGuiWindowFlags.NoCollapse)
         {
             Plugin = plugin;
         }
+
+        /// <summary>
+        /// Handles the event when the addon is opened.
+        /// </summary>
         public void HandleAddonOpen()
         {
             Open(true);
         }
+
+        /// <summary>
+        /// Handles the event when the main UI is opened.
+        /// </summary>
         public void HandleMainUiOpen()
         {
             Open();
         }
+
+        /// <summary>
+        /// Opens the main window.
+        /// </summary>
+        /// <param name="isAddonTrigger">Indicates whether the addon triggered the open event.</param>
         public void Open(bool isAddonTrigger = false)
         {
             Dalamud.Log.Debug("MainWindow Open Call");
@@ -63,17 +83,24 @@ namespace ShopItemRevealer.UI.Windows
                 SelectedNpcId = npc.NpcId;
                 ShowOnlyUnobtainableItems = cm.ShowOnlyUnobtainableItems;
                 HideForNpcIds = cm.HideForNpcIds;
-                if (ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0 && isAddonTrigger) { 
+                if (ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0 && isAddonTrigger)
+                {
                     Dalamud.Log.Debug("No unrevealed items and ShowOnlyUnobtainableItems is set.");
-                } else
+                }
+                else
                 {
                     Toggle();
                 }
-            } else
+            }
+            else
             {
                 Dalamud.Log.Debug("MainWindow Already Open");
             }
         }
+
+        /// <summary>
+        /// Closes the main window.
+        /// </summary>
         public void Close()
         {
             if (IsOpen)
@@ -81,6 +108,10 @@ namespace ShopItemRevealer.UI.Windows
                 Toggle();
             }
         }
+
+        /// <summary>
+        /// Prepares the window before drawing.
+        /// </summary>
         public override void PreDraw()
         {
             var minSize = new Vector2(MinSize, 17 * ImGui.GetTextLineHeightWithSpacing());
@@ -88,11 +119,18 @@ namespace ShopItemRevealer.UI.Windows
             ImGui.SetNextWindowSizeConstraints(minSize, maxSize);
             Flags |= ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse;
         }
-        
+
+        /// <summary>
+        /// Handles the event when the window is opened.
+        /// </summary>
         public override void OnOpen()
         {
             Dalamud.Log.Debug("MainWindow Opened");
         }
+
+        /// <summary>
+        /// Handles the event when the window is closed.
+        /// </summary>
         public override void OnClose()
         {
             var cm = (ConfigurationManager)Plugin.GetManager<ConfigurationManager>();
@@ -102,17 +140,24 @@ namespace ShopItemRevealer.UI.Windows
             Items.Clear();
             UnobtainableItems.Clear();
         }
+
+        /// <summary>
+        /// Draws the main window.
+        /// </summary>
         public override void Draw()
         {
             DrawHeader();
             if ((ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0) || Items.Count == 0)
             {
                 ImGui.Text("No unrevealed items.");
-            } else {
+            }
+            else
+            {
                 DrawItemTable(ShowOnlyUnobtainableItems ? UnobtainableItems : Items);
                 ImGui.Separator();
             }
         }
+
         private void DrawHeader()
         {
             ImGuiUtil.Checkbox("Show Only Unrevealed Items", "Show Only Unrevealed Items", ShowOnlyUnobtainableItems, (value) =>
@@ -137,16 +182,19 @@ namespace ShopItemRevealer.UI.Windows
             }
             ImGui.Separator();
         }
+
         private float itemNameColumnWidth;
+
         private void DrawItemTable(List<ShopItem> itemList)
         {
             ImGui.BeginChild("Items", new Vector2(0, -ImGui.GetFrameHeightWithSpacing()), true);
-            itemNameColumnWidth = (itemList.Max(i => WindowManager.TextWidth(i.ItemName)) + WindowManager.ItemSpacing.X + WindowManager.LineIconSize.X) / WindowManager.Scale; ;
-            ImGuiTable.DrawTable("Item Table", itemList, DrawRow,
+            itemNameColumnWidth = (itemList.Max(i => WindowManager.TextWidth(i.ItemName)) + WindowManager.ItemSpacing.X + WindowManager.LineIconSize.X) / WindowManager.Scale;
+            ImGuiUtil.DrawTable("Item Table", itemList, DrawRow,
                 ImGuiTableFlags.Resizable | ImGuiTableFlags.Reorderable, // | ImGuiTableFlags.Sortable handle sorting later
-                ["Item", "Cost", "Requirements"]);
+                "Item", "Cost", "Requirements");
             ImGui.EndChild();
         }
+
         private void DrawRow(ShopItem item)
         {
             ImGui.TableNextColumn();
@@ -179,6 +227,7 @@ namespace ShopItemRevealer.UI.Windows
                 ImGui.TextWrapped(line.ToString() + "\n");
             }
         }
+
         private static void CreateContextMenu(ShopItem item)
         {
             var locks = item.Requirements.ToDictionary(r => r.ReasonType, r => r.RequirementObject);
@@ -220,9 +269,11 @@ namespace ShopItemRevealer.UI.Windows
             }
         }
 
+        /// <summary>
+        /// Disposes the main window.
+        /// </summary>
         public void Dispose()
         {
-            
         }
     }
 }

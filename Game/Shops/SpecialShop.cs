@@ -1,15 +1,38 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using ShopItemRevealer.Game.Player;
 
 namespace ShopItemRevealer.Game.Shops
 {
-    internal class SpecialShop: IShop
+    /// <summary>
+    /// Represents a special shop in the game.
+    /// </summary>
+    public class SpecialShop : IShop
     {
+        /// <summary>
+        /// Gets the ID of the shop.
+        /// </summary>
         public uint ShopId { get; init; }
+
+        /// <summary>
+        /// Gets the type of the shop.
+        /// </summary>
         public ShopType ShopType { get; } = ShopType.SpecialShop;
-        public List<ShopItem> ShopItems { get; private set; } = [];
+
+        /// <summary>
+        /// Gets the list of shop items.
+        /// </summary>
+        public List<ShopItem> ShopItems { get; private set; } = new();
+
+        /// <summary>
+        /// Gets the NPC associated with the shop.
+        /// </summary>
         public ShopNpc ShopNpc { get; private set; } = null!;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpecialShop"/> class with the specified shop ID and NPC.
+        /// </summary>
+        /// <param name="shopId">The ID of the shop.</param>
+        /// <param name="npc">The NPC associated with the shop.</param>
         public SpecialShop(uint shopId, ShopNpc npc)
         {
             ShopId = shopId;
@@ -26,7 +49,7 @@ namespace ShopItemRevealer.Game.Shops
                 var itemName = itemData.Name.ExtractText();
                 if (itemName == "") continue;
                 var itemCost = item.ItemCosts[0].CurrencyCost;
-                List<Requirement> reqs = [];
+                List<Requirement> reqs = new();
                 if (item.Quest.IsValid)
                 {
                     reqs.Add(new Requirement(LockedReasonType.Quest, PlayerManager.GetQuest(item.Quest.RowId)));
@@ -44,10 +67,22 @@ namespace ShopItemRevealer.Game.Shops
                 ShopItems.Add(resolved);
             }
         }
+
+        /// <summary>
+        /// Gets a shop item by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the shop item.</param>
+        /// <returns>The shop item with the specified ID.</returns>
         public ShopItem? GetShopItem(uint id)
         {
             return ShopItems.FirstOrDefault(x => x.ItemId == id) ?? null;
         }
+
+        /// <summary>
+        /// Gets a shop item by its name.
+        /// </summary>
+        /// <param name="name">The name of the shop item.</param>
+        /// <returns>The shop item with the specified name.</returns>
         public ShopItem? GetShopItem(string name)
         {
             return ShopItems.FirstOrDefault(x => x.ItemName == name) ?? null;

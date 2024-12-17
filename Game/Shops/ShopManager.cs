@@ -1,25 +1,56 @@
-﻿using Dalamud.Game.ClientState.Objects;
+using Dalamud.Game.ClientState.Objects;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using System.Runtime.InteropServices;
 
 namespace ShopItemRevealer.Game.Shops
 {
-    internal class ShopManager : IManager
+    /// <summary>
+    /// Manages the shops in the game.
+    /// </summary>
+    public class ShopManager : IManager
     {
         private ShopItemRevealer Plugin { get; set; } = null!;
-        internal List<IShop> Shops { get; set; } = [];
-        internal List<ShopNpc> Npcs { get; set; } = [];
+
+        /// <summary>
+        /// Gets or sets the list of shops.
+        /// </summary>
+        public List<IShop> Shops { get; set; } = new();
+
+        /// <summary>
+        /// Gets or sets the list of NPCs.
+        /// </summary>
+        public List<ShopNpc> Npcs { get; set; } = new();
+
+        /// <summary>
+        /// Disposes the shop manager.
+        /// </summary>
         public void Dispose()
         {
         }
+
+        /// <summary>
+        /// Initializes the shop manager with the specified plugin.
+        /// </summary>
+        /// <param name="plugin">The plugin instance.</param>
         public void Initialize(ShopItemRevealer plugin)
         {
             Plugin = plugin;
         }
+
+        /// <summary>
+        /// Gets the list of shop items for the specified NPC.
+        /// </summary>
+        /// <param name="npc">The NPC.</param>
+        /// <returns>The list of shop items.</returns>
         public List<ShopItem> GetShopItems(ShopNpc npc)
         {
             return Shops.Where(shop => shop.ShopNpc == npc).SelectMany(shop => shop.ShopItems).ToList();
         }
+
+        /// <summary>
+        /// Scans the shops for the specified NPC.
+        /// </summary>
+        /// <param name="npc">The NPC.</param>
         public void ShopScanner(ShopNpc npc)
         {
             var npcData = SheetManager.ENpcBaseSheet.GetRow(npc.NpcId);
@@ -56,10 +87,18 @@ namespace ShopItemRevealer.Game.Shops
                 DetectAgentShops();
             }
         }
-        public Dictionary<uint, uint> FixedKnownNpcs = new Dictionary<uint, uint>()
+
+        /// <summary>
+        /// Gets or sets the dictionary of fixed known NPCs.
+        /// </summary>
+        public Dictionary<uint, uint> FixedKnownNpcs { get; set; } = new Dictionary<uint, uint>()
         {
             { 1770285, 1033714 }
         };
+
+        /// <summary>
+        /// Detects agent shops.
+        /// </summary>
         public unsafe void DetectAgentShops()
         {
             var eventFramework = EventFramework.Instance();

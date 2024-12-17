@@ -1,18 +1,52 @@
-﻿namespace ShopItemRevealer.Game.Shops
+namespace ShopItemRevealer.Game.Shops
 {
+    /// <summary>
+    /// Represents the type of shop.
+    /// </summary>
     public enum ShopType
     {
         SpecialShop,
         GilShop,
         SatisfactionShop
     }
-    internal interface IShop
+
+    /// <summary>
+    /// Represents a shop interface.
+    /// </summary>
+    public interface IShop
     {
-        public uint ShopId { get; }
-        public ShopType ShopType { get; }
+        /// <summary>
+        /// Gets the ID of the shop.
+        /// </summary>
+        uint ShopId { get; }
+
+        /// <summary>
+        /// Gets the type of the shop.
+        /// </summary>
+        ShopType ShopType { get; }
+
+        /// <summary>
+        /// Gets the list of shop items.
+        /// </summary>
         List<ShopItem> ShopItems { get; }
+
+        /// <summary>
+        /// Gets the NPC associated with the shop.
+        /// </summary>
         ShopNpc ShopNpc { get; }
-        public ShopItem? GetShopItem(uint id);
-        public ShopItem? GetShopItem(string name);
+
+        /// <summary>
+        /// Gets a shop item by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the shop item.</param>
+        /// <returns>The shop item with the specified ID.</returns>
+        ShopItem? GetShopItem(uint id);
+
+        /// <summary>
+        /// Gets a shop item by its name.
+        /// </summary>
+        /// <param name="name">The name of the shop item.</param>
+        /// <returns>The shop item with the specified name.</returns>
+        ShopItem? GetShopItem(string name);
     }
 }

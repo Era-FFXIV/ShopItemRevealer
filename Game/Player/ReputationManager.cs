@@ -1,19 +1,61 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game;
+using FFXIVClientStructs.FFXIV.Client.Game;
 using Newtonsoft.Json;
 
 namespace ShopItemRevealer.Game.Player
 {
-    internal static class ReputationManager
+    /// <summary>
+    /// Manages the reputation for beast tribes.
+    /// </summary>
+    public static class ReputationManager
     {
-        internal class Reputation(BeastTribe tribe, int rank, uint value)
+        /// <summary>
+        /// Represents the reputation of a beast tribe.
+        /// </summary>
+        public class Reputation
         {
-            public BeastTribe BeastTribe { get; set; } = tribe ?? new BeastTribe(0);
-            public int Rank { get; set; } = rank;
-            public uint Value { get; set; } = value;
+            /// <summary>
+            /// Gets or sets the beast tribe.
+            /// </summary>
+            public BeastTribe BeastTribe { get; set; }
+
+            /// <summary>
+            /// Gets or sets the rank of the beast tribe.
+            /// </summary>
+            public int Rank { get; set; }
+
+            /// <summary>
+            /// Gets or sets the reputation value of the beast tribe.
+            /// </summary>
+            public uint Value { get; set; }
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Reputation"/> class.
+            /// </summary>
+            /// <param name="tribe">The beast tribe.</param>
+            /// <param name="rank">The rank of the beast tribe.</param>
+            /// <param name="value">The reputation value of the beast tribe.</param>
+            public Reputation(BeastTribe tribe, int rank, uint value)
+            {
+                BeastTribe = tribe ?? new BeastTribe(0);
+                Rank = rank;
+                Value = value;
+            }
         }
-        internal static List<uint> CumulativeReputation { get; set; } = [];
-        internal static List<Reputation> CurrentReputation { get; set; } = [];
-        internal static void Initialize()
+
+        /// <summary>
+        /// Gets or sets the cumulative reputation values.
+        /// </summary>
+        public static List<uint> CumulativeReputation { get; set; } = new();
+
+        /// <summary>
+        /// Gets or sets the current reputation values.
+        /// </summary>
+        public static List<Reputation> CurrentReputation { get; set; } = new();
+
+        /// <summary>
+        /// Initializes the reputation manager.
+        /// </summary>
+        public static void Initialize()
         {
             uint c = 0;
             for (uint i = 0; i < SheetManager.BeastReputationRankSheet.Count; i++)
@@ -24,9 +66,13 @@ namespace ShopItemRevealer.Game.Player
             }
             ScanAllReputations();
         }
-        internal static void ScanAllReputations()
+
+        /// <summary>
+        /// Scans all reputations.
+        /// </summary>
+        public static void ScanAllReputations()
         {
-            List<Reputation> scan = [];
+            List<Reputation> scan = new();
             var repDict = new List<KeyValuePair<BeastTribe, uint>>();
             for (uint i = 1; i < SheetManager.BeastTribeSheet.Count; i++)
             {
@@ -42,7 +88,13 @@ namespace ShopItemRevealer.Game.Player
             CurrentReputation = scan;
             Dalamud.Log.Verbose($"[ReputationManager] Scanned {CurrentReputation.Count} reputations: {JsonConvert.SerializeObject(CurrentReputation)}");
         }
-        internal static Reputation GetReputation(uint beastTribeId)
+
+        /// <summary>
+        /// Gets the reputation of a beast tribe.
+        /// </summary>
+        /// <param name="beastTribeId">The ID of the beast tribe.</param>
+        /// <returns>The reputation of the beast tribe.</returns>
+        public static Reputation GetReputation(uint beastTribeId)
         {
             if (CurrentReputation.Count == 0)
             {
@@ -52,10 +104,17 @@ namespace ShopItemRevealer.Game.Player
             var r = CurrentReputation.First(CurrentReputation => CurrentReputation.BeastTribe.Id == beastTribeId);
             return r;
         }
-        internal static uint CalculateReputation(int rank, uint reputation)
+
+        /// <summary>
+        /// Calculates the reputation value.
+        /// </summary>
+        /// <param name="rank">The rank of the beast tribe.</param>
+        /// <param name="reputation">The reputation value.</param>
+        /// <returns>The calculated reputation value.</returns>
+        public static uint CalculateReputation(int rank, uint reputation)
         {
             if (rank == 0) return 0;
-            return CumulativeReputation[(int)rank-1] + reputation;
+            return CumulativeReputation[(int)rank - 1] + reputation;
         }
     }
 }

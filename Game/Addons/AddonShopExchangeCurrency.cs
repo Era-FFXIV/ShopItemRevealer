@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.Addon.Lifecycle;
+using Dalamud.Game.Addon.Lifecycle;
 using Dalamud.Game.Addon.Lifecycle.AddonArgTypes;
 using Dalamud.Game.Gui.ContextMenu;
 using FFXIVClientStructs.FFXIV.Component.GUI;
@@ -8,19 +8,38 @@ using System.Numerics;
 
 namespace ShopItemRevealer.Game.Addons
 {
-    internal unsafe class AddonShopExchangeCurrency : IDisposable
+    /// <summary>
+    /// Represents the AddonShopExchangeCurrency class which handles the ShopExchangeCurrency addon.
+    /// </summary>
+    public unsafe class AddonShopExchangeCurrency : IDisposable
     {
-        private ShopItemRevealer Plugin { get; set; } = null!;
+        /// <summary>
+        /// Gets the position of the addon.
+        /// </summary>
         public Vector2 Position { get; private set; }
+
+        /// <summary>
+        /// Gets the width of the addon.
+        /// </summary>
         public float Width { get; private set; }
+
+        /// <summary>
+        /// Gets the height of the addon.
+        /// </summary>
         public float Height { get; private set; }
 
+        private ShopItemRevealer Plugin { get; set; } = null!;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddonShopExchangeCurrency"/> class.
+        /// </summary>
+        /// <param name="plugin">The plugin instance.</param>
         public AddonShopExchangeCurrency(ShopItemRevealer plugin)
         {
             Plugin = plugin;
-            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PostSetup, ["ShopExchangeCurrency"], OnPostSetup);
-            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PreFinalize, ["ShopExchangeCurrency"], OnFinalize);
-            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PostDraw, ["ShopExchangeCurrency"], OnPostDraw);
+            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PostSetup, new[] { "ShopExchangeCurrency" }, OnPostSetup);
+            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PreFinalize, new[] { "ShopExchangeCurrency" }, OnFinalize);
+            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PostDraw, new[] { "ShopExchangeCurrency" }, OnPostDraw);
             Dalamud.ContextMenu.OnMenuOpened += ContextMenuOpened;
         }
 
@@ -46,6 +65,7 @@ namespace ShopItemRevealer.Game.Addons
             var manager = (UIManager)Plugin.GetManager<UIManager>();
             manager.OnAddonOpen(type, args);
         }
+
         private void ContextMenuOpened(IMenuOpenedArgs args)
         {
             Dalamud.Log.Debug("ContextMenuOpened");
@@ -72,17 +92,21 @@ namespace ShopItemRevealer.Game.Addons
                 }
             }
         }
+
         private void ContextMenuClick(IMenuItemClickedArgs args)
         {
             var manager = (UIManager)Plugin.GetManager<UIManager>();
             manager.WindowManager.MainWindow.Open();
         }
 
+        /// <summary>
+        /// Disposes the AddonShopExchangeCurrency instance and unregisters event listeners.
+        /// </summary>
         public void Dispose()
         {
-            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PostSetup, ["ShopExchangeCurrency"], OnPostSetup);
-            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PreFinalize, ["ShopExchangeCurrency"], OnFinalize);
-            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PostDraw, ["ShopExchangeCurrency"], OnPostDraw);
+            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PostSetup, new[] { "ShopExchangeCurrency" }, OnPostSetup);
+            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PreFinalize, new[] { "ShopExchangeCurrency" }, OnFinalize);
+            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PostDraw, new[] { "ShopExchangeCurrency" }, OnPostDraw);
             Position = Vector2.Zero;
             Dalamud.ContextMenu.OnMenuOpened -= ContextMenuOpened;
         }
