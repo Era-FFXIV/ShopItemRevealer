@@ -48,7 +48,7 @@ namespace ShopItemRevealer.UI.Windows
                 var npc = sm.Npcs.FirstOrDefault(n => n.NpcId == gm.LastTarget);
                 if (npc == null)
                 {
-                    Dalamud.Log.Error("NPC not found in shop list.");
+                    Dalamud.ChatGui.PrintError("No supported shops found for this NPC.");
                     return;
                 }
                 Items = sm.GetShopItems(npc);
@@ -173,8 +173,8 @@ namespace ShopItemRevealer.UI.Windows
             // requirements
             foreach (var line in item.Requirements)
             {
-                if (ImGui.IsItemHovered() && line.NeededQuests() > 0) ImGuiUtil.HoverTooltip($"Quests needed to unlock: {line.NeededQuests()}", ImGuiHoveredFlags.RootWindow);
-                if (ImGui.IsItemHovered() && line.RequirementObject is BeastTribeItem tribe && tribe.RequiredReputation == 0) ImGuiUtil.HoverTooltip($"Requires max rank in all {tribe.Quest!.Expansion} beast tribes.", ImGuiHoveredFlags.RootWindow);
+                if (ImGui.IsItemHovered() && line.NeededQuests() > 0) ImGuiUtil.HoverTooltip($"Quests needed to unlock: {line.NeededQuests()}", ImGuiHoveredFlags.None);
+                if (ImGui.IsItemHovered() && line.RequirementObject is BeastTribeItem tribe && tribe.RequiredReputation == 0) ImGuiUtil.HoverTooltip($"Requires max rank in all {tribe.Quest!.Expansion} beast tribes.", ImGuiHoveredFlags.None);
                 using var _ = ImRaii.PushIndent(1, (line.ReasonType == LockedReasonType.BeastTribe));
                 ImGui.TextWrapped(line.ToString() + "\n");
             }

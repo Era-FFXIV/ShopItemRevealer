@@ -22,6 +22,7 @@ namespace ShopItemRevealer.UI.Windows
 
         internal WindowSystem WindowSystem { get; private set; } = new(ShopItemRevealer.Name);
         public MainWindow MainWindow { get; private set; } = null!;
+        public LandingWindow LandingWindow { get; private set; } = null!;
 
         public static float TextWidth(string text) => ImGui.CalcTextSize(text).X + ItemSpacing.X;
         public void Dispose()
@@ -35,8 +36,10 @@ namespace ShopItemRevealer.UI.Windows
             Plugin = plugin;
             MainWindow = new("Shop Item Revealer", plugin);
             WindowSystem.AddWindow(MainWindow);
+            LandingWindow = new("Landing Window - Shop Item Revealer");
+            WindowSystem.AddWindow(LandingWindow);
             Dalamud.PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
-            Dalamud.PluginInterface.UiBuilder.OpenMainUi += MainWindow.HandleMainUiOpen;
+            Dalamud.PluginInterface.UiBuilder.OpenMainUi += LandingWindow.Toggle;
         }
     }
 }
