@@ -3,7 +3,7 @@ name: PRD17
 on: 
   push:
     branches:
-      - master
+      - main
 
 env:
   PUBLIC_NAME: Shop Item Revealer
