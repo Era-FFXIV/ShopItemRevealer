@@ -2,13 +2,13 @@
 using Dalamud.Plugin;
 using ShopItemRevealer.Configuration;
 using ShopItemRevealer.Game.Player;
+using System.Reflection;
 
 namespace ShopItemRevealer
 {
     public sealed class ShopItemRevealer : IDalamudPlugin
     {
         public static string Name => "Shop Item Revealer";
-        public static string Version => "1.0.0";
         public static string PluginDataPath { get; private set; } = null!;
         internal ConfigurationManager Configuration { get; private set; } = null!;
         internal static IDalamudPluginInterface? PluginInterface;
@@ -18,7 +18,7 @@ namespace ShopItemRevealer
         {
             PluginInterface = pluginInterface;
             PluginInterface.Create<Dalamud>();
-            Dalamud.Log.Debug($"{Name} v{Version} loaded.");
+            Dalamud.Log.Debug($"{Name} v{Assembly.GetExecutingAssembly().GetName().Version} loaded.");
             PluginDataPath = Dalamud.PluginInterface.GetPluginConfigDirectory();
             Configuration = Dalamud.PluginInterface.GetPluginConfig() as ConfigurationManager ?? new ConfigurationManager();
             Managers =
