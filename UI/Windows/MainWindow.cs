@@ -125,7 +125,7 @@ namespace ShopItemRevealer.UI.Windows
             {
                 if (value) HideForNpcIds.Add(SelectedNpcId);
                 else HideForNpcIds.Remove(SelectedNpcId);
-            }, ImGuiHoveredFlags.RootWindow);
+            }, ImGuiHoveredFlags.None);
             ImGuiUtil.HelpMarker("If you don't want to see the items for this NPC, check this box. You can still use /shopitems to open this window.");
             if (UnobtainableItems.Any(i => i.IsUnobtainable && i.Requirements.Any(r => r.ReasonType == LockedReasonType.Achievement)))
             {
@@ -138,13 +138,39 @@ namespace ShopItemRevealer.UI.Windows
             ImGui.Separator();
         }
         private float itemNameColumnWidth;
+        private List<ShopItem> SortedItems { get; set; } = [];
+
         private void DrawItemTable(List<ShopItem> itemList)
         {
+            if (SortedItems.Count != itemList.Count)
+            {
+                SortedItems = [.. itemList.OrderBy(i => i.ItemName)];
+            }
             ImGui.BeginChild("Items", new Vector2(0, -ImGui.GetFrameHeightWithSpacing()), true);
-            itemNameColumnWidth = (itemList.Max(i => WindowManager.TextWidth(i.ItemName)) + WindowManager.ItemSpacing.X + WindowManager.LineIconSize.X) / WindowManager.Scale; ;
-            ImGuiTable.DrawTable("Item Table", itemList, DrawRow,
-                ImGuiTableFlags.Resizable | ImGuiTableFlags.Reorderable, // | ImGuiTableFlags.Sortable handle sorting later
-                ["Item", "Cost", "Requirements"]);
+            itemNameColumnWidth = (itemList.Max(i => WindowManager.TextWidth(i.ItemName)) + WindowManager.ItemSpacing.X + WindowManager.LineIconSize.X) / WindowManager.Scale;
+            ImGui.BeginTable("Item Table", 3, ImGuiTableFlags.Resizable | ImGuiTableFlags.Reorderable | ImGuiTableFlags.Sortable);
+            ImGui.TableSetupColumn("Item", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.DefaultSort | ImGuiTableColumnFlags.PreferSortAscending, itemNameColumnWidth);
+            ImGui.TableSetupColumn("Cost", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.PreferSortDescending, ImGui.CalcTextSize("999999").X);
+            ImGui.TableSetupColumn("Requirements", ImGuiTableColumnFlags.WidthStretch);
+            ImGui.TableHeadersRow();
+            if (ImGui.TableGetSortSpecs().SpecsDirty)
+            {
+                var spec = ImGui.TableGetSortSpecs().Specs;
+                if (spec.ColumnIndex == 0)
+                {
+                    SortedItems = spec.SortDirection == ImGuiSortDirection.Ascending ? [.. SortedItems.OrderBy(i => i.ItemName)] : [.. SortedItems.OrderByDescending(i => i.ItemName)];
+                }
+                else if (spec.ColumnIndex == 1)
+                {
+                    SortedItems = spec.SortDirection == ImGuiSortDirection.Ascending ? [.. SortedItems.OrderBy(i => i.Price)] : [.. SortedItems.OrderByDescending(i => i.Price)];
+                }
+                ImGui.TableGetSortSpecs().SpecsDirty = false;
+            }
+            foreach (var item in SortedItems)
+            {
+                DrawRow(item);
+            }
+            ImGui.EndTable();
             ImGui.EndChild();
         }
         private void DrawRow(ShopItem item)
