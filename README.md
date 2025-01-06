@@ -25,12 +25,18 @@ Clicking "Hide Window for This NPC" will make the window not appear when speakin
 
 ## Change Log
 
+### 1.0.2 (Current)
+ - Adds table sorting by name or quantity
+ - Additional assert fixes
+
+### 1.0.1
+ - ImGui assert fixes
 ### 1.0.0
  - Initial release.
 
 ## Installing
 
-This is a [FFXIVQuickLauncher](https://github.com/goatcorp/FFXIVQuickLauncher) plugin using Dalamud, so you must install it through that. As of the time of writing, it is currently pending inclusion into the official repositories.
+This is a [FFXIVQuickLauncher](https://github.com/goatcorp/FFXIVQuickLauncher) plugin using Dalamud, so you must install it through that. It should now be in the Plugin Installer as it is now considered stable.
 
 ## Contributing
 
