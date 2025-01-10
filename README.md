@@ -25,7 +25,13 @@ Clicking "Hide Window for This NPC" will make the window not appear when speakin
 
 ## Change Log
 
-### 1.0.2 (Current)
+### 1.1.0 (Current)
+ - Adds gemstone vendor support with FATE rank requirement tracking.
+ - Added some help desk at the bottom of the window.
+ - Showing/hiding unrevealed items now re-sorts the table correctly.
+ - Some code cleanup
+
+### 1.0.2
  - Adds table sorting by name or quantity
  - Additional assert fixes
 
