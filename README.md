@@ -1,7 +1,7 @@
 # Shop Item Revealer
 <img src="docs/icon.png" alt="icon" width="50">
 
-This [FFXIVQuickLauncher](https://github.com/goatcorp/FFXIVQuickLauncher) plugin reveals items that are locked while browsing a beast tribe vendor's inventory.
+This [FFXIVQuickLauncher](https://github.com/goatcorp/FFXIVQuickLauncher) plugin reveals items that are locked while browsing certain vendors' inventories. Beast tribe and Gemstone vendors are currently supported.
 
 ![main screen image](/docs/mainscreen.jpg)
 
