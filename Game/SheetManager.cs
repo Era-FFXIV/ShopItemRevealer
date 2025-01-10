@@ -16,6 +16,7 @@ namespace ShopItemRevealer.Game
         internal static ExcelSheet<Achievement> AchievementSheet { get; } = Dalamud.DataManager.GetExcelSheet<Achievement>();
         internal static ExcelSheet<BeastTribe> BeastTribeSheet { get; } = Dalamud.DataManager.GetExcelSheet<BeastTribe>();
         internal static ExcelSheet<BeastReputationRank> BeastReputationRankSheet { get; } = Dalamud.DataManager.GetExcelSheet<BeastReputationRank>();
+        internal static ExcelSheet<PlaceName> PlaceNameSheet { get; } = Dalamud.DataManager.GetExcelSheet<PlaceName>();
         public void Dispose()
         {
         }

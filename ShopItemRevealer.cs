@@ -26,6 +26,7 @@ namespace ShopItemRevealer
                 Configuration,
                 new Game.SheetManager(),
                 new Game.GameManager(),
+                new PlayerManager(),
                 new UI.UIManager(),
                 new Game.Shops.ShopManager(),
                 new Debugging.DebugService(),

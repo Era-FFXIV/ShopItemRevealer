@@ -2,11 +2,24 @@
 
 namespace ShopItemRevealer.Game.Player
 {
-    internal static class PlayerManager
+    internal class PlayerManager : IManager
     {
         internal static List<Achievement> Achievements { get; private set; } = [];
         internal static List<Quest> Quests { get; private set; } = [];
         internal static List<BeastTribe> BeastTribes { get; private set; } = [];
+        internal static List<FateRank> FateRanks { get; private set; } = [];
+        internal static bool HasFateRanksInitialized => FateRanks.Count > 0;
+        public void Initialize(ShopItemRevealer plugin)
+        {
+            FateRanks = FateRank.FromJson();
+        }
+        public void Dispose()
+        {
+            FateRanks = [];
+            Quests = [];
+            Achievements = [];
+            BeastTribes = [];
+        }
         internal static void AddAchievement(Achievement achievement)
         {
             if (Achievements.Contains(achievement))
@@ -96,6 +109,22 @@ namespace ShopItemRevealer.Game.Player
             }
             Dalamud.Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Total Quests: {questCount}");
             return questCount;
+        }
+        internal static FateRank? GetFateRank(uint id)
+        {
+            var f = FateRanks.Find(x => x.TerritoryId == id && x.CharacterId == Dalamud.ClientState.LocalContentId);
+            return f;
+        }
+        internal static void AddFateRank(uint TerritoryId, uint Rank, string name)
+        {
+            if (FateRanks.Any(x => x.TerritoryId == TerritoryId))
+            {
+                // update the rank
+                var newRank = new FateRank(TerritoryId, Rank, name);
+                FateRanks.Remove(FateRanks.Find(x => x.TerritoryId == TerritoryId && x.CharacterId == Dalamud.ClientState.LocalContentId)!);
+                FateRanks.Add(newRank);
+            }
+            FateRanks.Add(new FateRank(TerritoryId, Rank, name));
         }
     }
 }

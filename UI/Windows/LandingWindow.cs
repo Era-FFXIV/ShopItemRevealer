@@ -1,13 +1,6 @@
-﻿using Dalamud.Interface.Animation.EasingFunctions;
-using Dalamud.Interface.Utility;
-using Dalamud.Interface.Windowing;
+﻿using Dalamud.Interface.Windowing;
 using ImGuiNET;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopItemRevealer.UI.Windows
 {
