@@ -1,4 +1,5 @@
-﻿using ShopItemRevealer.Game.Player;
+﻿using Lumina.Extensions;
+using ShopItemRevealer.Game.Player;
 
 namespace ShopItemRevealer.Game.Shops
 {
@@ -7,6 +8,7 @@ namespace ShopItemRevealer.Game.Shops
         Achievement,
         Quest,
         BeastTribe,
+        FateRank,
         None
     }
     internal class Requirement
@@ -28,6 +30,11 @@ namespace ShopItemRevealer.Game.Shops
                     var currentRep = ReputationManager.GetReputation(tribe.BeastTribe.Id).Value;
                     if (tribe.RequiredReputation == 0) return "Allied Society Quest";
                     return $"Reputation: {tribe.Quest!.BeastReputationRankName} ({currentRep}/{tribe.RequiredReputation})";
+                case LockedReasonType.FateRank:
+                    FateShopItem fateRank = (FateShopItem)RequirementObject;
+                    var currentRank = PlayerManager.GetFateRank(fateRank.TerritoryId);
+                    if (currentRank == null) return $"Shared FATE Rank ({fateRank.Item.ZoneName}): {fateRank.Item.RankRequired} - Yours: 0";
+                    return $"Shared FATE Rank ({fateRank.Item.ZoneName}): {fateRank.Item.RankRequired} - Yours: {currentRank.Rank}";
                 case LockedReasonType.None:
                     return $"None";
                 default:
@@ -43,6 +50,15 @@ namespace ShopItemRevealer.Game.Shops
                 var item = (BeastTribeItem)RequirementObject;
                 ReputationValue = ReputationManager.CalculateReputation((int)item.Quest!.BeastReputationRank, item.Quest.BeastReputationValue);
             }
+            else if (requirement.GetType() == typeof(FateShopItem))
+            {
+                var item = (FateShopItem)RequirementObject;
+                var quest = SheetManager.QuestSheet.FirstOrNull(x => x.Name.ExtractText() == item.Item.QuestRequired);
+                if (quest != null)
+                {
+                    NeededQuestsInt = (int)quest.Value.RowId;
+                }
+            }
         }
         public bool MeetsRequirement()
         {
@@ -57,17 +73,32 @@ namespace ShopItemRevealer.Game.Shops
                 case LockedReasonType.BeastTribe:
                     BeastTribeItem tribe = (BeastTribeItem)RequirementObject;
                     return ReputationManager.GetReputation(tribe.BeastTribe.Id).Value >= tribe.RequiredReputation;
+                case LockedReasonType.FateRank:
+                    FateShopItem fateRank = (FateShopItem)RequirementObject;
+                    if (PlayerManager.GetFateRank(fateRank.TerritoryId) != null)
+                    {
+                        return PlayerManager.GetFateRank(fateRank.TerritoryId)!.Rank >= fateRank.Item.RankRequired;
+                    }
+                    else { return false; }
                 case LockedReasonType.None:
                     return true;
                 default:
                     return false;
             }
         }
-        public int NeededQuests() { 
-            if (ReasonType != LockedReasonType.BeastTribe) { return 0; }
-            BeastTribeItem tribe = (BeastTribeItem)RequirementObject;
-            NeededQuestsInt = PlayerManager.GetQuestsNeededForRank(tribe.BeastTribe, tribe.RequiredReputation);
-            return NeededQuestsInt;
+        public int NeededQuests()
+        {
+            if (ReasonType == LockedReasonType.BeastTribe)
+            {
+                BeastTribeItem tribe = (BeastTribeItem)RequirementObject;
+                NeededQuestsInt = PlayerManager.GetQuestsNeededForRank(tribe.BeastTribe, tribe.RequiredReputation);
+                return NeededQuestsInt;
+            }
+            else if (ReasonType == LockedReasonType.FateRank)
+            {
+                return NeededQuestsInt;
+            }
+            return 0;
         }
         public class NullRequirement : IGameInfo
         {

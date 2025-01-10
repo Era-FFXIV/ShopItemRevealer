@@ -5,7 +5,6 @@ using ImGuiNET;
 using ShopItemRevealer.Configuration;
 using ShopItemRevealer.Game;
 using ShopItemRevealer.Game.Shops;
-using Dalamud.Interface.Utility;
 using Dalamud.Game.Text.SeStringHandling;
 using ShopItemRevealer.Game.Player;
 using Newtonsoft.Json;
@@ -20,7 +19,7 @@ namespace ShopItemRevealer.UI.Windows
         private List<ShopItem> Items { get; set; } = [];
         private List<ShopItem> UnobtainableItems { get; set; } = [];
         private Dictionary<ShopItem, int> QuestsNeeded { get; set; } = [];
-
+        private bool IsGemstoneTrader { get; set; } = false;
         private uint SelectedNpcId { get; set; } = 0;
         private bool ShowOnlyUnobtainableItems { get; set; } = false;
         private List<uint> HideForNpcIds { get; set; } = [];
@@ -63,6 +62,10 @@ namespace ShopItemRevealer.UI.Windows
                 SelectedNpcId = npc.NpcId;
                 ShowOnlyUnobtainableItems = cm.ShowOnlyUnobtainableItems;
                 HideForNpcIds = cm.HideForNpcIds;
+                if (SheetManager.ENpcResidentSheet.TryGetRow(npc.NpcId, out var row))
+                {
+                    if (row.Title.ExtractText() == "Gemstone Trader") IsGemstoneTrader = true;
+                }
                 if (ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0 && isAddonTrigger) { 
                     Dalamud.Log.Debug("No unrevealed items and ShowOnlyUnobtainableItems is set.");
                 } else
@@ -108,9 +111,20 @@ namespace ShopItemRevealer.UI.Windows
             if ((ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0) || Items.Count == 0)
             {
                 ImGui.Text("No unrevealed items.");
-            } else {
+            }
+            else if (!PlayerManager.HasFateRanksInitialized)
+            {
+                ImGui.TextUnformatted("Fate ranks not initialized. Please open the Shared FATEs window to populate.");
+            }
+            else {
                 DrawItemTable(ShowOnlyUnobtainableItems ? UnobtainableItems : Items);
                 ImGui.Separator();
+                ImGui.TextUnformatted("Right-click an item for more options.");
+                if (IsGemstoneTrader)
+                {
+                    ImGui.SameLine();
+                    ImGui.TextWrapped("If the FATE rank is not showing or is incorrect, open the Shared FATEs window.");
+                }
             }
         }
         private void DrawHeader()
@@ -118,6 +132,7 @@ namespace ShopItemRevealer.UI.Windows
             ImGuiUtil.Checkbox("Show Only Unrevealed Items", "Show Only Unrevealed Items", ShowOnlyUnobtainableItems, (value) =>
             {
                 ShowOnlyUnobtainableItems = value;
+                SortDirty = true;
             });
             ImGui.SameLine();
             var hideForThisNpc = HideForNpcIds.Contains(SelectedNpcId);
@@ -138,6 +153,7 @@ namespace ShopItemRevealer.UI.Windows
             ImGui.Separator();
         }
         private float itemNameColumnWidth;
+        private bool SortDirty { get; set; } = false;
         private List<ShopItem> SortedItems { get; set; } = [];
 
         private void DrawItemTable(List<ShopItem> itemList)
@@ -153,7 +169,7 @@ namespace ShopItemRevealer.UI.Windows
             ImGui.TableSetupColumn("Cost", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.PreferSortDescending, ImGui.CalcTextSize("999999").X);
             ImGui.TableSetupColumn("Requirements", ImGuiTableColumnFlags.WidthStretch);
             ImGui.TableHeadersRow();
-            if (ImGui.TableGetSortSpecs().SpecsDirty)
+            if (ImGui.TableGetSortSpecs().SpecsDirty || SortDirty)
             {
                 var spec = ImGui.TableGetSortSpecs().Specs;
                 if (spec.ColumnIndex == 0)
@@ -165,6 +181,7 @@ namespace ShopItemRevealer.UI.Windows
                     SortedItems = spec.SortDirection == ImGuiSortDirection.Ascending ? [.. SortedItems.OrderBy(i => i.Price)] : [.. SortedItems.OrderByDescending(i => i.Price)];
                 }
                 ImGui.TableGetSortSpecs().SpecsDirty = false;
+                SortDirty = false;
             }
             foreach (var item in SortedItems)
             {

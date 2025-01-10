@@ -10,17 +10,20 @@ namespace ShopItemRevealer.Game
     {
         private ShopItemRevealer Plugin { get; set; } = null!;
         public AddonShopExchangeCurrency AddonShopExchangeCurrency { get; private set; } = null!;
+        public AddonFateProgress AddonFateProgress { get; private set; } = null!;
         public uint LastTarget { get; private set; }
         public void Dispose()
         {
             Dalamud.Framework.Update -= OnFrameworkUpdate;
             AddonShopExchangeCurrency.Dispose();
+            AddonFateProgress.Dispose();
         }
 
         public void Initialize(ShopItemRevealer plugin)
         {
             Plugin = plugin;
             AddonShopExchangeCurrency = new AddonShopExchangeCurrency(plugin);
+            AddonFateProgress = new AddonFateProgress(plugin);
             Dalamud.Framework.Update += OnFrameworkUpdate;
         }
 

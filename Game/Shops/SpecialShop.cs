@@ -27,6 +27,17 @@ namespace ShopItemRevealer.Game.Shops
                 if (itemName == "") continue;
                 var itemCost = item.ItemCosts[0].CurrencyCost;
                 List<Requirement> reqs = [];
+                var shopManager = (ShopManager)ShopItemRevealer.Managers.First(x => x is ShopManager);
+                var fateItem = shopManager.FateItems.FirstOrDefault(x => x.ItemId == item.ReceiveItems[0].Item.RowId);
+                if (fateItem != null)
+                {
+                    Requirement fateReq = new(LockedReasonType.FateRank, fateItem);
+                    reqs.Add(fateReq);
+                    if (fateReq.NeededQuestsInt > 0)
+                    {
+                        reqs.Add(new Requirement(LockedReasonType.Quest, PlayerManager.GetQuest((uint)fateReq.NeededQuestsInt)));
+                    }
+                }
                 if (item.Quest.IsValid)
                 {
                     reqs.Add(new Requirement(LockedReasonType.Quest, PlayerManager.GetQuest(item.Quest.RowId)));
