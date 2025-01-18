@@ -9,6 +9,7 @@ namespace ShopItemRevealer.Game.Addons
     internal class AddonFateProgress : IDisposable
     {
         private readonly ShopItemRevealer plugin;
+        private bool IsOpen { get; set; } = false;
         public AddonFateProgress(ShopItemRevealer plugin)
         {
             this.plugin = plugin;
@@ -22,10 +23,7 @@ namespace ShopItemRevealer.Game.Addons
         }
         private void OnPostRefresh(AddonEvent e, AddonArgs args)
         {
-            if (PlayerManager.HasFateRanksInitialized)
-            {
-                return;
-            }
+            if (IsOpen && PlayerManager.HasFateRanksInitialized) return;
             unsafe
             {
                 var addon = (AtkUnitBase*)args.Addon;
@@ -47,6 +45,10 @@ namespace ShopItemRevealer.Game.Addons
                 {
                     return;
                 }
+                if (PlayerManager.HasFateRanksInitialized)
+                {
+                    PlayerManager.FateRanks.Clear();
+                }
                 foreach (var fate in fateAgent->Tabs)
                 {
                     foreach (var entry in fate.Zones)
@@ -65,6 +67,7 @@ namespace ShopItemRevealer.Game.Addons
         }
         private void OnFinalize(AddonEvent type, AddonArgs args)
         {
+            IsOpen = false;
             Dalamud.Log.Debug("AddonFateProgress Finalize");
         }
     }

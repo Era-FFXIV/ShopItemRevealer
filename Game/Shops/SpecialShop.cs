@@ -38,7 +38,7 @@ namespace ShopItemRevealer.Game.Shops
                         reqs.Add(new Requirement(LockedReasonType.Quest, PlayerManager.GetQuest((uint)fateReq.NeededQuestsInt)));
                     }
                 }
-                if (item.Quest.IsValid)
+                else if (item.Quest.IsValid && item.Quest.Value.RowId > 0)
                 {
                     reqs.Add(new Requirement(LockedReasonType.Quest, PlayerManager.GetQuest(item.Quest.RowId)));
                 }
@@ -46,7 +46,7 @@ namespace ShopItemRevealer.Game.Shops
                 {
                     reqs.Add(new Requirement(LockedReasonType.Achievement, PlayerManager.GetAchievement(item.AchievementUnlock.RowId)));
                 }
-                if (item.Quest.IsValid && item.Quest.Value.BeastTribe.IsValid)
+                if (item.Quest.IsValid && item.Quest.Value.BeastTribe.IsValid && fateItem == null)
                 {
                     reqs.Add(new Requirement(LockedReasonType.BeastTribe, new BeastTribeItem(PlayerManager.GetBeastTribe(item.Quest.Value.BeastTribe.RowId), PlayerManager.GetQuest(item.Quest.RowId))));
                 }

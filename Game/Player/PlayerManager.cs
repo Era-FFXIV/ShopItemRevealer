@@ -13,9 +13,16 @@ namespace ShopItemRevealer.Game.Player
 
         public void Initialize(ShopItemRevealer plugin)
         {
-            FateRanks = FateRank.FromJson();
             Dalamud.ClientState.Login += OnLogin;
             Dalamud.ClientState.Logout += OnLogout;
+            Dalamud.Framework.RunOnFrameworkThread(() =>
+            {
+                if (Dalamud.ClientState.LocalPlayer != null)
+                {
+                    CharacterId = Dalamud.ClientState.LocalContentId;
+                    FateRanks = FateRank.FromJson();
+                }
+            });
         }
         public void Dispose()
         {

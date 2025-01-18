@@ -18,7 +18,7 @@ namespace ShopItemRevealer.Game.Player
             Rank = rank;
             if (SheetManager.TerritoryTypeSheet.TryGetRow(territoryId, out var territory))
             {
-                ZoneName = territory.Name.ExtractText();
+                ZoneName = territory.PlaceName.Value.Name.ExtractText();
             }
             else
             {
@@ -30,11 +30,13 @@ namespace ShopItemRevealer.Game.Player
         {
             if (Dalamud.ClientState.LocalPlayer == null)
             {
+                Dalamud.Log.Debug("LocalPlayer is null");
                 return [];
             }
-            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), $"FateRanks-${Dalamud.ClientState.LocalContentId}.json");
+            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), $"FateRanks-{Dalamud.ClientState.LocalContentId}.json");
             if (!File.Exists(json))
             {
+                Dalamud.Log.Debug($"File {json} does not exist");
                 return [];
             }
             var data = File.ReadAllText(json);

@@ -35,14 +35,13 @@ namespace ShopItemRevealer.Game.Shops
                 Name = "Unknown";
                 Dalamud.Log.Error($"[WikiFateItem] Item {ItemId} not found.");
             }
-            if (SheetManager.TerritoryTypeSheet.TryGetRow((uint)TerritoryId, out var territory))
+            if (TerritoryId != 0 && SheetManager.TerritoryTypeSheet.TryGetRow((uint)TerritoryId, out var territory))
             {
-                ZoneName = territory.Name.ExtractText();
+                ZoneName = territory.PlaceName.Value.Name.ExtractText();
             }
             else
             {
-                ZoneName = "Unknown";
-                Dalamud.Log.Error($"[WikiFateItem] Territory {TerritoryId} not found.");
+                ZoneName = expansion;
             }
             if (QuestId != 0 && SheetManager.QuestSheet.TryGetRow((uint)QuestId, out var quest))
             {

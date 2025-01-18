@@ -1,1255 +1,1613 @@
 [
   {
-    "Name": "Rail Tenderloin",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27850,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Island Wolf Fang",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27798,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Kholusia Riding Map",
     "Cost": 70,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27962,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Forgiven Obscenity Card",
     "Cost": 100,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "Extinguishing the Last Light"
+    "ZoneId": 814,
+    "QuestRequired": 69179,
+    "ItemId": 29709,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "The Quick Way Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 28881,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Formidable Card",
     "Cost": 200,
     "RankRequired": 3,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 26769,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "A World Divided Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27896,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Cordial",
     "Cost": 4,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 6141,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Grade 7 Dark Matter",
     "Cost": 6,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 17837,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Glamour Dispeller",
     "Cost": 6,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 7621,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Glamour Prism",
     "Cost": 6,
     "RankRequired": 1,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 21800,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Heavens\u0027 Eye Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25187,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Quickarm Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25197,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Savage Aim Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25188,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Savage Might Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25189,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Battledance Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25190,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Piety Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25186,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Quicktongue Materia VII",
     "Cost": 120,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25198,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Heavens\u0027 Eye Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26728,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Quickarm Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26738,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Savage Aim Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26729,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Savage Might Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26730,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Battledance Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26731,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Piety Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26727,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Quicktongue Materia VIII",
     "Cost": 240,
     "RankRequired": 2,
-    "ZoneName": "Kholusia",
-    "QuestRequired": "N/A"
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26739,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
   },
   {
-    "Name": "Ovim Meat",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27852,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Ovim Fleece",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27756,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Zonure Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27735,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Amh Araeng Riding Map",
     "Cost": 70,
     "RankRequired": 1,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27963,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Sands of Blood Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 28882,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Micro Gigantender",
     "Cost": 400,
     "RankRequired": 3,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 26792,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Sands of Amber Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Amh Araeng",
-    "QuestRequired": "N/A"
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27897,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Smilodon Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27732,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Hoptrap Leaf",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27763,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Silkmoth Scales",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27764,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Lakeland Elf Tree",
     "Cost": 30,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 28999,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Lakeland Flower Garden",
     "Cost": 10,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 29000,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Lakeland Riding Map",
     "Cost": 70,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27961,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Gnoll Card",
     "Cost": 60,
     "RankRequired": 1,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 29706,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Unchanging, Everchanging Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 28880,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Deepshadow Barding",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27989,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "The Source Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Lakeland",
-    "QuestRequired": "N/A"
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27895,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Lorikeet Egg",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27851,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Lorikeet Down",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27797,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Green Glider Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27733,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Il Mheg Riding Map",
     "Cost": 70,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27964,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Mushroom Lamp",
     "Cost": 100,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 33269,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Flower Basket Card",
     "Cost": 40,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 29704,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Keeper of the Keys Card",
     "Cost": 60,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 33332,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Anden Card",
     "Cost": 60,
     "RankRequired": 1,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "Every Anden of the Rainbow"
+    "ZoneId": 816,
+    "QuestRequired": 70252,
+    "ItemId": 39370,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Elemental Wheel",
     "Cost": 100,
     "RankRequired": 2,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 32232,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "The Faerie Ring Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 28883,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "A Reason to Live Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 30264,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Butterfly Specimen",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27276,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Little Leafman",
     "Cost": 400,
     "RankRequired": 3,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 30090,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Fierce and Free Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Il Mheg",
-    "QuestRequired": "N/A"
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27898,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Atrociraptor Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27734,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Vampire Vine Sap",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27774,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Vampire Cup Vine",
     "Cost": 1,
     "RankRequired": 1,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27773,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Rak\u0027tika Greatwood Riding Map",
     "Cost": 70,
     "RankRequired": 1,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27965,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Huaca Card",
     "Cost": 100,
     "RankRequired": 1,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "A Sleep Disturbed"
+    "ZoneId": 817,
+    "QuestRequired": 69301,
+    "ItemId": 29710,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "A Hopeless Race Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 28884,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Greatwood Planter",
     "Cost": 100,
     "RankRequired": 2,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 28635,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Butterfly Effect",
     "Cost": 400,
     "RankRequired": 3,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 26804,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Civilizations Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "The Rak\u0027tika Greatwood",
-    "QuestRequired": "N/A"
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27899,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Sea Swallow Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27736,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Cubus Flesh",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27799,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Hydrozoan Umbrella",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27800,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Akadaemia Prospectuses",
     "Cost": 50,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 33274,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Amaurot Wall Lamp",
     "Cost": 50,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 28972,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Tempest Riding Map",
     "Cost": 70,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27966,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Therion Card",
     "Cost": 250,
     "RankRequired": 1,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "Shadowbringers (Quest)"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 29713,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Neath Dark Waters Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 28885,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Bedlam\u0027s Brink Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 2,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 30263,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Stuffed Clionid",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27313,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Full Fathom Five Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "The Tempest",
-    "QuestRequired": "N/A"
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27900,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
   },
   {
-    "Name": "Hamsa Tenderloin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36253,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Amra",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36264,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Gaja Hide",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36242,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Kumbhira Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36245,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Thavnair Riding Map",
     "Cost": 70,
     "RankRequired": 2,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 35963,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Thavnairian Dhow",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 35807,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Daivadipa Card",
     "Cost": 300,
     "RankRequired": 3,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "Endwalker (Quest)"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 37342,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Divine Words Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36362,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Prayers Repeated Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Thavnair",
-    "QuestRequired": "N/A"
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 37425,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Yakow Chuck",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36254,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Luncheon Toad Skin",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36243,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Berkanan Sap",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36261,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Labyrinthos Riding Map",
     "Cost": 70,
     "RankRequired": 2,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 35962,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Labyrinthos Warning Sign",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 35799,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "The Labyrinth Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36361,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Dreams of Man Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Labyrinthos",
-    "QuestRequired": "N/A"
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 37424,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Ovibos Milk",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36255,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Almasty Fur",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36203,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Saiga Hide",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36244,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Garlemald Riding Map",
     "Cost": 70,
     "RankRequired": 2,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 35964,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Garlean Containers",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 35805,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Emperor Portrait",
     "Cost": 250,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 37389,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "White Snow, Black Steel Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36363,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Black Steel, Cold Embers Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 37426,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Home Beyond the Horizon Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 37427,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "The Emperor\u0027s Wont Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 38650,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Penitus Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Garlemald",
-    "QuestRequired": "N/A"
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 38651,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Dynamite Ash",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36259,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Lunatender Blossom",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36258,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Mousse Flesh",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36257,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Mare Lamentorum Riding Map",
     "Cost": 70,
     "RankRequired": 2,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 35965,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Etheirys Globe",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 35800,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "One Small Step Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36364,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Welcome to Our Town! (Endwalker) Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Mare Lamentorum",
-    "QuestRequired": "N/A"
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 37429,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Bird of Elpis Breast",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36630,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Egg of Elpis",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36256,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Ophiotauros Hide",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36246,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Petalouda Scales",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36260,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Elpis Riding Map",
     "Cost": 70,
     "RankRequired": 2,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 35967,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Ancient Lamp",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 35798,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Elpis Garden Fountain",
     "Cost": 200,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 41141,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Elpis Stone Pillar",
     "Cost": 50,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 38627,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Hythlodaeus Card",
     "Cost": 200,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36280,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Chief Keyward Lahabrea Card",
     "Cost": 200,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "Truth Imperfect"
+    "ZoneId": 961,
+    "QuestRequired": 70176,
+    "ItemId": 38438,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Sky Unsundered Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36365,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Stars Long Dead Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Elpis",
-    "QuestRequired": "N/A"
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 37428,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Dynamis Crystal",
     "Cost": 2,
     "RankRequired": 1,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 36262,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Ultima Thule Riding Map",
     "Cost": 70,
     "RankRequired": 2,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 35966,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Nekropolis Table",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 35801,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Chair Hena",
     "Cost": 100,
     "RankRequired": 3,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 40628,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Wee Ea",
     "Cost": 500,
     "RankRequired": 3,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 35971,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Ea Card",
     "Cost": 200,
     "RankRequired": 3,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 36267,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Chi Card",
     "Cost": 300,
     "RankRequired": 3,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "Endwalker (Quest)"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 37341,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Close in the Distance Orchestrion Roll",
     "Cost": 350,
     "RankRequired": 3,
-    "ZoneName": "Ultima Thule",
-    "QuestRequired": "N/A"
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 36366,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
   },
   {
-    "Name": "Silver Lobo Hide",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44053,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Alpaca Fillet",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44063,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Megamaguey Pineapple",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44067,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Urqopacha Riding Map",
     "Cost": 90,
     "RankRequired": 2,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 43607,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Pelupelu Partition",
     "Cost": 150,
     "RankRequired": 3,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44114,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Windswept Echoes Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44312,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Windswept Whispers Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 45009,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Alpaca Cria",
     "Cost": 700,
     "RankRequired": 4,
-    "ZoneName": "Urqopacha",
-    "QuestRequired": "N/A"
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 43571,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Hammerhead Crocodile Skin",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44054,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Swampmonk Thigh",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44064,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Poison Frog Secretions",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44068,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Lesser Apollyon Shell",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44069,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Kozama\u0027uka Riding Map",
     "Cost": 90,
     "RankRequired": 2,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 43608,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Ihuykatumu Bed",
     "Cost": 150,
     "RankRequired": 3,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44115,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Of Glittering Wings Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44313,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Of Glittering Baubles Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 45010,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Stuffed Flag",
     "Cost": 150,
     "RankRequired": 4,
-    "ZoneName": "Kozama\u0027uka",
-    "QuestRequired": "N/A"
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 41819,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Br\u0027aax Hide",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44055,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Branchbearer Fruit",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44065,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Ty\u0027aitya Wingblade",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44070,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Yak T\u0027el Riding Map",
     "Cost": 90,
     "RankRequired": 2,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 43609,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Yak T\u0027el Scale Tree",
     "Cost": 150,
     "RankRequired": 3,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44121,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Emerald under Sapphire Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44314,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Skybound Emerald Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 45011,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Ilyikty\u0027i",
     "Cost": 700,
     "RankRequired": 4,
-    "ZoneName": "Yak T\u0027el",
-    "QuestRequired": "N/A"
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 43574,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Rroneek Fleece",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44027,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Rroneek Chuck",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44106,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Nopalitender Tuna",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44066,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Tumbleclaw Weeds",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44071,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Shaaloani Riding Map",
     "Cost": 90,
     "RankRequired": 2,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 43610,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Assortment of Strewn Bottles",
     "Cost": 150,
     "RankRequired": 3,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44117,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Ceruleum Smoke at High Noon Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44315,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Ceruleum Embers by Dusk Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 45012,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Turali Barding",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 43601,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Ttokrrone Card",
     "Cost": 300,
     "RankRequired": 4,
-    "ZoneName": "Shaaloani",
-    "QuestRequired": "N/A"
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44479,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Gomphotherium Skin",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44056,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Alexandrian Axe Beak Wing",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44072,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Heritage Found Riding Map",
     "Cost": 90,
     "RankRequired": 2,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 43611,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Heritage Found Crates",
     "Cost": 150,
     "RankRequired": 3,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44118,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Flash in the Dark Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44316,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Crash in the Dark Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 45013,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Otis Card",
     "Cost": 300,
     "RankRequired": 4,
-    "ZoneName": "Heritage Found",
-    "QuestRequired": "N/A"
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 43873,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Gargantua Hide",
     "Cost": 3,
     "RankRequired": 1,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44057,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Living Memory Riding Map",
     "Cost": 90,
     "RankRequired": 2,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 43612,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Neo Kingdom Lamppost",
     "Cost": 150,
     "RankRequired": 3,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44122,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Bygone Serenity Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44317,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Echoes of Memory Orchestrion Roll",
     "Cost": 450,
     "RankRequired": 4,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 45014,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Cahciua Card",
     "Cost": 300,
     "RankRequired": 4,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 43874,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   },
   {
-    "Name": "Mica the Magical Mu Card",
     "Cost": 300,
     "RankRequired": 4,
-    "ZoneName": "Living Memory",
-    "QuestRequired": "N/A"
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44480,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
   }
 ]
