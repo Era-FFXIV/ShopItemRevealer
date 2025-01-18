@@ -9,9 +9,13 @@ namespace ShopItemRevealer.Game.Player
         internal static List<BeastTribe> BeastTribes { get; private set; } = [];
         internal static List<FateRank> FateRanks { get; private set; } = [];
         internal static bool HasFateRanksInitialized => FateRanks.Count > 0;
+        private static ulong CharacterId { get; set; } = 0;
+
         public void Initialize(ShopItemRevealer plugin)
         {
             FateRanks = FateRank.FromJson();
+            Dalamud.ClientState.Login += OnLogin;
+            Dalamud.ClientState.Logout += OnLogout;
         }
         public void Dispose()
         {
@@ -19,7 +23,23 @@ namespace ShopItemRevealer.Game.Player
             Quests = [];
             Achievements = [];
             BeastTribes = [];
+            Dalamud.ClientState.Login -= OnLogin;
+            Dalamud.ClientState.Logout -= OnLogout;
         }
+        private void OnLogin()
+        {
+            CharacterId = Dalamud.ClientState.LocalContentId;
+            FateRanks = FateRank.FromJson();
+        }
+        private void OnLogout(int _, int __)
+        {
+            FateRank.Save(FateRanks, CharacterId);
+            FateRanks = [];
+            Quests = [];
+            Achievements = [];
+            BeastTribes = [];
+        }
+
         internal static void AddAchievement(Achievement achievement)
         {
             if (Achievements.Contains(achievement))
@@ -112,19 +132,19 @@ namespace ShopItemRevealer.Game.Player
         }
         internal static FateRank? GetFateRank(uint id)
         {
-            var f = FateRanks.Find(x => x.TerritoryId == id && x.CharacterId == Dalamud.ClientState.LocalContentId);
+            var f = FateRanks.Find(x => x.TerritoryId == id);
             return f;
         }
-        internal static void AddFateRank(uint TerritoryId, uint Rank, string name)
+        internal static void AddFateRank(uint TerritoryId, uint Rank)
         {
-            if (FateRanks.Any(x => x.TerritoryId == TerritoryId))
+            var rank = FateRanks.FirstOrDefault(x => x.TerritoryId == TerritoryId);
+            if (rank != null)
             {
-                // update the rank
-                var newRank = new FateRank(TerritoryId, Rank, name);
-                FateRanks.Remove(FateRanks.Find(x => x.TerritoryId == TerritoryId && x.CharacterId == Dalamud.ClientState.LocalContentId)!);
-                FateRanks.Add(newRank);
+                rank.Rank = Rank;
+            } else
+            {
+                FateRanks.Add(new FateRank(TerritoryId, Rank));
             }
-            FateRanks.Add(new FateRank(TerritoryId, Rank, name));
         }
     }
 }

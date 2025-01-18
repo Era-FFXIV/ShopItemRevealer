@@ -9,7 +9,6 @@ namespace ShopItemRevealer.Game.Addons
     internal class AddonFateProgress : IDisposable
     {
         private readonly ShopItemRevealer plugin;
-        private bool HasInitialized = false;
         public AddonFateProgress(ShopItemRevealer plugin)
         {
             this.plugin = plugin;
@@ -23,7 +22,7 @@ namespace ShopItemRevealer.Game.Addons
         }
         private void OnPostRefresh(AddonEvent e, AddonArgs args)
         {
-            if (HasInitialized)
+            if (PlayerManager.HasFateRanksInitialized)
             {
                 return;
             }
@@ -54,21 +53,19 @@ namespace ShopItemRevealer.Game.Addons
                     {
                         if (entry.ZoneName.ToString() == "") continue;
                         Dalamud.Log.Debug($"Id: {entry.TerritoryTypeId} - Name: {entry.ZoneName} - Rank: {entry.CurrentRank}");
-                        PlayerManager.AddFateRank(entry.TerritoryTypeId, entry.CurrentRank, entry.ZoneName.ToString());
+                        PlayerManager.AddFateRank(entry.TerritoryTypeId, entry.CurrentRank);
                     }
                 }
             }
             if (PlayerManager.HasFateRanksInitialized)
             {
                 Dalamud.Log.Debug("Fate Ranks Initialized");
-                FateRank.Save(PlayerManager.FateRanks);
-                HasInitialized = true;
+                FateRank.Save(PlayerManager.FateRanks, Dalamud.ClientState.LocalContentId);
             }
         }
         private void OnFinalize(AddonEvent type, AddonArgs args)
         {
             Dalamud.Log.Debug("AddonFateProgress Finalize");
-            HasInitialized = false;
         }
     }
 }

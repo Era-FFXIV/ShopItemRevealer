@@ -5,31 +5,34 @@ namespace ShopItemRevealer.Game.Player
     [Serializable]
     internal class FateRank : IGameInfo
     {
-        public ulong CharacterId { get; init; }
         public uint TerritoryId { get; init; }
-        public uint Rank { get; init; }
+        public uint Rank { get; set; }
         public string ZoneName { get; init; }
-
         public uint Id => TerritoryId;
         public string Name => ZoneName;
-        public FateRank(uint territoryId, uint rank, string zoneName)
-        {
-            TerritoryId = territoryId;
-            Rank = rank;
-            ZoneName = zoneName;
-            CharacterId = Dalamud.ClientState.LocalContentId;
-        }
+
         [JsonConstructor]
-        public FateRank(uint territoryId, uint rank, string zoneName, ulong characterId)
+        public FateRank(uint territoryId, uint rank)
         {
             TerritoryId = territoryId;
             Rank = rank;
-            ZoneName = zoneName;
-            CharacterId = characterId;
+            if (SheetManager.TerritoryTypeSheet.TryGetRow(territoryId, out var territory))
+            {
+                ZoneName = territory.Name.ExtractText();
+            }
+            else
+            {
+                ZoneName = "Unknown";
+                Dalamud.Log.Error($"[FateRank] Territory {territoryId} not found.");
+            }
         }
         public static List<FateRank> FromJson()
         {
-            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), "FateRanks.json");
+            if (Dalamud.ClientState.LocalPlayer == null)
+            {
+                return [];
+            }
+            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), $"FateRanks-${Dalamud.ClientState.LocalContentId}.json");
             if (!File.Exists(json))
             {
                 return [];
@@ -42,9 +45,9 @@ namespace ShopItemRevealer.Game.Player
             }
             return ranks;
         }
-        public static void Save(List<FateRank> ranks)
+        public static void Save(List<FateRank> ranks, ulong CharacterId)
         {
-            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), "FateRanks.json");
+            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), $"FateRanks-{CharacterId}.json");
             File.WriteAllText(json, JsonConvert.SerializeObject(ranks, Formatting.Indented));
         }
     }
