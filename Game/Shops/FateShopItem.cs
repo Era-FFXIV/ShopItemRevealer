@@ -3,44 +3,67 @@
 namespace ShopItemRevealer.Game.Shops
 {
     [Serializable]
-    internal class WikiFateItem(string name, int cost, int rankRequired, string zoneName, string questRequired = "")
+    internal class WikiFateItem
     {
-        public string Name { get; set; } = name;
-        public int Cost { get; set; } = cost;
-        public int RankRequired { get; set; } = rankRequired;
-        public string ZoneName { get; set; } = zoneName;
-        public string QuestRequired { get; set; } = questRequired;
+        public string Name { get; init; }
+        public int Cost { get; init; }
+        public int RankRequired { get; init; }
+        public string ZoneName { get; init; }
+        public string QuestRequired { get; init; }
+        public int ItemId { get; init; }
+        public int TerritoryId { get; init; }
+        public int QuestId { get; init; }
+        public string Expansion { get; init; }
+        public bool IsAllItems { get; init; }
+
+        public WikiFateItem(int cost, int rankRequired, int zoneId, int questRequired, int itemId, string expansion, bool isAllItems)
+        {
+            Cost = cost;
+            RankRequired = rankRequired;
+            TerritoryId = zoneId;
+            QuestId = questRequired;
+            ItemId = itemId;
+            Expansion = expansion;
+            IsAllItems = isAllItems;
+
+            if (SheetManager.ItemSheet.TryGetRow((uint)ItemId, out var item))
+            {
+                Name = item.Name.ExtractText();
+            }
+            else
+            {
+                Name = "Unknown";
+                Dalamud.Log.Error($"[WikiFateItem] Item {ItemId} not found.");
+            }
+            if (SheetManager.TerritoryTypeSheet.TryGetRow((uint)TerritoryId, out var territory))
+            {
+                ZoneName = territory.Name.ExtractText();
+            }
+            else
+            {
+                ZoneName = "Unknown";
+                Dalamud.Log.Error($"[WikiFateItem] Territory {TerritoryId} not found.");
+            }
+            if (QuestId != 0 && SheetManager.QuestSheet.TryGetRow((uint)QuestId, out var quest))
+            {
+                QuestRequired = quest.Name.ExtractText();
+            }
+            else
+            {
+                QuestRequired = "N/A";
+            }
+        }
     }
     internal class FateShopItem : IGameInfo
     {
         internal WikiFateItem Item { get; private set; }
-        internal uint ItemId { get; private set; }
-        internal uint TerritoryId { get; private set; }
+        internal uint ItemId => (uint)Item.ItemId;
+        internal uint TerritoryId => (uint)Item.TerritoryId;
         public uint Id => ItemId;
         public string Name => Item.Name;
         internal FateShopItem(WikiFateItem fateItem)
         {
             Item = fateItem;
-            var item = SheetManager.ItemSheet.Where(x => x.Name.ExtractText() == fateItem.Name).FirstOrDefault();
-            if (item.RowId == 0)
-            {
-                Dalamud.Log.Error($"Unable to find item {fateItem.Name}");
-                return;
-            }
-            ItemId = item.RowId;
-            var place = SheetManager.PlaceNameSheet.Where(x => x.Name.ExtractText() == fateItem.ZoneName).FirstOrDefault();
-            if (place.RowId == 0)
-            {
-                Dalamud.Log.Error($"Unable to find place {fateItem.ZoneName}");
-                return;
-            }
-            var territory = SheetManager.TerritoryTypeSheet.Where(x => x.PlaceName.RowId == place.RowId).FirstOrDefault();
-            if (territory.RowId == 0)
-            {
-                Dalamud.Log.Error($"Unable to find territory {fateItem.ZoneName}");
-                return;
-            }
-            TerritoryId = territory.RowId;
             Dalamud.Log.Verbose($"FateShopItem: {Item.Name} - ItemId: {ItemId} - TerritoryId: {TerritoryId}");
         }
     }

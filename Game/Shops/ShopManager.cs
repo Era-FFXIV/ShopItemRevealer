@@ -95,7 +95,7 @@ namespace ShopItemRevealer.Game.Shops
         }
         public void LoadFateItems()
         {
-            var resourceName = "ShopItemRevealer.Data.items.json";
+            var resourceName = "ShopItemRevealer.Data.FateItems.json";
             var assembly = Assembly.GetExecutingAssembly();
             using var stream = assembly.GetManifestResourceStream(resourceName);
             if (stream == null)
