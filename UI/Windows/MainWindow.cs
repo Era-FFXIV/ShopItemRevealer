@@ -8,6 +8,7 @@ using ShopItemRevealer.Game.Shops;
 using Dalamud.Game.Text.SeStringHandling;
 using ShopItemRevealer.Game.Player;
 using Newtonsoft.Json;
+using Dalamud.Interface;
 
 
 namespace ShopItemRevealer.UI.Windows
@@ -115,6 +116,10 @@ namespace ShopItemRevealer.UI.Windows
             else if (!PlayerManager.HasFateRanksInitialized)
             {
                 ImGui.TextUnformatted("Fate ranks not initialized. Please open the Shared FATEs window to populate.");
+                if (ImGui.Button("Open Shared FATEs"))
+                {
+                    UIManager.OpenSharedFateWindow();
+                }
             }
             else {
                 DrawItemTable(ShowOnlyUnobtainableItems ? UnobtainableItems : Items);
@@ -123,7 +128,7 @@ namespace ShopItemRevealer.UI.Windows
                 if (IsGemstoneTrader)
                 {
                     ImGui.SameLine();
-                    ImGui.TextWrapped("If the FATE rank is not showing or is incorrect, open the Shared FATEs window.");
+                    ImGui.TextUnformatted("If the FATE rank is not showing or is incorrect, re-open the Shared FATEs window to update.");
                 }
             }
         }
@@ -162,9 +167,9 @@ namespace ShopItemRevealer.UI.Windows
             {
                 SortedItems = [.. itemList.OrderBy(i => i.ItemName)];
             }
-            ImGui.BeginChild("Items", new Vector2(0, -ImGui.GetFrameHeightWithSpacing()), true);
             itemNameColumnWidth = (itemList.Max(i => WindowManager.TextWidth(i.ItemName)) + WindowManager.ItemSpacing.X + WindowManager.LineIconSize.X) / WindowManager.Scale;
-            ImGui.BeginTable("Item Table", 3, ImGuiTableFlags.Resizable | ImGuiTableFlags.Reorderable | ImGuiTableFlags.Sortable);
+            ImGui.BeginTable("Item Table", 3, ImGuiTableFlags.Resizable | ImGuiTableFlags.Reorderable | ImGuiTableFlags.Sortable | ImGuiTableFlags.ScrollY, new Vector2(0, -ImGui.GetFrameHeightWithSpacing()));
+            ImGui.TableSetupScrollFreeze(0, 1);
             ImGui.TableSetupColumn("Item", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.DefaultSort | ImGuiTableColumnFlags.PreferSortAscending, itemNameColumnWidth);
             ImGui.TableSetupColumn("Cost", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.PreferSortDescending, ImGui.CalcTextSize("999999").X);
             ImGui.TableSetupColumn("Requirements", ImGuiTableColumnFlags.WidthStretch);
@@ -185,10 +190,12 @@ namespace ShopItemRevealer.UI.Windows
             }
             foreach (var item in SortedItems)
             {
-                DrawRow(item);
+                if (item.IsUnobtainable || (!ShowOnlyUnobtainableItems && !item.IsUnobtainable))
+                {
+                    DrawRow(item);
+                }
             }
             ImGui.EndTable();
-            ImGui.EndChild();
         }
         private void DrawRow(ShopItem item)
         {
