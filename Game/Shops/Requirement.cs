@@ -32,9 +32,11 @@ namespace ShopItemRevealer.Game.Shops
                     return $"Reputation: {tribe.Quest!.BeastReputationRankName} ({currentRep}/{tribe.RequiredReputation})";
                 case LockedReasonType.FateRank:
                     FateShopItem fateRank = (FateShopItem)RequirementObject;
-                    var currentRank = PlayerManager.GetFateRank(fateRank.TerritoryId);
-                    if (currentRank == null) return $"Shared FATE Rank ({fateRank.Item.ZoneName}): {fateRank.Item.RankRequired} - Yours: 0";
-                    return $"Shared FATE Rank ({fateRank.Item.ZoneName}): {fateRank.Item.RankRequired} - Yours: {currentRank.Rank}";
+                    var currentRank = PlayerManager.GetFateRank(fateRank.Item.IsAllItems ? Dalamud.ClientState.TerritoryType : fateRank.TerritoryId);
+                    var zoneName = fateRank.Item.ZoneName;
+                    if (fateRank.Item.IsAllItems) zoneName = SheetManager.TerritoryTypeSheet.GetRow(Dalamud.ClientState.TerritoryType).PlaceName.Value.Name.ExtractText();
+                    if (currentRank == null) return $"Shared FATE Rank ({zoneName}): {fateRank.Item.RankRequired} - Yours: 0";
+                    return $"Shared FATE Rank ({zoneName}): {fateRank.Item.RankRequired} - Yours: {currentRank.Rank}";
                 case LockedReasonType.None:
                     return $"None";
                 default:
@@ -53,7 +55,7 @@ namespace ShopItemRevealer.Game.Shops
             else if (requirement.GetType() == typeof(FateShopItem))
             {
                 var item = (FateShopItem)RequirementObject;
-                var quest = SheetManager.QuestSheet.FirstOrNull(x => x.Name.ExtractText() == item.Item.QuestRequired);
+                var quest = SheetManager.QuestSheet.FirstOrNull(x => x.RowId == item.Item.QuestId);
                 if (quest != null)
                 {
                     NeededQuestsInt = (int)quest.Value.RowId;
@@ -75,9 +77,10 @@ namespace ShopItemRevealer.Game.Shops
                     return ReputationManager.GetReputation(tribe.BeastTribe.Id).Value >= tribe.RequiredReputation;
                 case LockedReasonType.FateRank:
                     FateShopItem fateRank = (FateShopItem)RequirementObject;
-                    if (PlayerManager.GetFateRank(fateRank.TerritoryId) != null)
+                    var territoryId = fateRank.TerritoryId == 0 ? Dalamud.ClientState.TerritoryType : fateRank.TerritoryId;
+                    if (PlayerManager.GetFateRank(territoryId) != null)
                     {
-                        return PlayerManager.GetFateRank(fateRank.TerritoryId)!.Rank >= fateRank.Item.RankRequired;
+                        return PlayerManager.GetFateRank(territoryId)!.Rank >= fateRank.Item.RankRequired;
                     }
                     else { return false; }
                 case LockedReasonType.None:

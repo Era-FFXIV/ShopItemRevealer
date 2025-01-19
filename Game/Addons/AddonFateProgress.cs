@@ -9,7 +9,7 @@ namespace ShopItemRevealer.Game.Addons
     internal class AddonFateProgress : IDisposable
     {
         private readonly ShopItemRevealer plugin;
-        private bool HasInitialized = false;
+        private bool IsOpen { get; set; } = false;
         public AddonFateProgress(ShopItemRevealer plugin)
         {
             this.plugin = plugin;
@@ -23,10 +23,7 @@ namespace ShopItemRevealer.Game.Addons
         }
         private void OnPostRefresh(AddonEvent e, AddonArgs args)
         {
-            if (HasInitialized)
-            {
-                return;
-            }
+            if (IsOpen && PlayerManager.HasFateRanksInitialized) return;
             unsafe
             {
                 var addon = (AtkUnitBase*)args.Addon;
@@ -48,27 +45,30 @@ namespace ShopItemRevealer.Game.Addons
                 {
                     return;
                 }
+                if (PlayerManager.HasFateRanksInitialized)
+                {
+                    PlayerManager.FateRanks.Clear();
+                }
                 foreach (var fate in fateAgent->Tabs)
                 {
                     foreach (var entry in fate.Zones)
                     {
                         if (entry.ZoneName.ToString() == "") continue;
                         Dalamud.Log.Debug($"Id: {entry.TerritoryTypeId} - Name: {entry.ZoneName} - Rank: {entry.CurrentRank}");
-                        PlayerManager.AddFateRank(entry.TerritoryTypeId, entry.CurrentRank, entry.ZoneName.ToString());
+                        PlayerManager.AddFateRank(entry.TerritoryTypeId, entry.CurrentRank);
                     }
                 }
             }
             if (PlayerManager.HasFateRanksInitialized)
             {
                 Dalamud.Log.Debug("Fate Ranks Initialized");
-                FateRank.Save(PlayerManager.FateRanks);
-                HasInitialized = true;
+                FateRank.Save(PlayerManager.FateRanks, Dalamud.ClientState.LocalContentId);
             }
         }
         private void OnFinalize(AddonEvent type, AddonArgs args)
         {
+            IsOpen = false;
             Dalamud.Log.Debug("AddonFateProgress Finalize");
-            HasInitialized = false;
         }
     }
 }

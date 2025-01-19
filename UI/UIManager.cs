@@ -52,6 +52,18 @@ namespace ShopItemRevealer.UI
                 return false;
             }
         }
+        public static unsafe bool OpenSharedFateWindow()
+        {
+            if (UIModule.Instance()->IsMainCommandUnlocked(84))
+            {
+                UIModule.Instance()->ExecuteMainCommand(84);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void OpenMainWindow()
         {
             WindowManager.MainWindow.Open();

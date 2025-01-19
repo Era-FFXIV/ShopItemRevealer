@@ -1,0 +1,1613 @@
+[
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27850,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27798,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 1,
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27962,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 1,
+    "ZoneId": 814,
+    "QuestRequired": 69179,
+    "ItemId": 29709,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 28881,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 200,
+    "RankRequired": 3,
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 26769,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 814,
+    "QuestRequired": 0,
+    "ItemId": 27896,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 4,
+    "RankRequired": 1,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 6141,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 6,
+    "RankRequired": 1,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 17837,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 6,
+    "RankRequired": 1,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 7621,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 6,
+    "RankRequired": 1,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 21800,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25187,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25197,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25188,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25189,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25190,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25186,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 120,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 25198,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26728,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26738,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26729,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26730,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26731,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26727,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 240,
+    "RankRequired": 2,
+    "ZoneId": 0,
+    "QuestRequired": 0,
+    "ItemId": 26739,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": true
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27852,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27756,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27735,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 1,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27963,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 28882,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 400,
+    "RankRequired": 3,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 26792,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 815,
+    "QuestRequired": 0,
+    "ItemId": 27897,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27732,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27763,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27764,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 30,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 28999,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 10,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 29000,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27961,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 60,
+    "RankRequired": 1,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 29706,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 28880,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27989,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 813,
+    "QuestRequired": 0,
+    "ItemId": 27895,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27851,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27797,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27733,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27964,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 33269,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 40,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 29704,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 60,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 33332,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 60,
+    "RankRequired": 1,
+    "ZoneId": 816,
+    "QuestRequired": 70252,
+    "ItemId": 39370,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 2,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 32232,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 28883,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 30264,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27276,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 400,
+    "RankRequired": 3,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 30090,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 816,
+    "QuestRequired": 0,
+    "ItemId": 27898,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27734,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27774,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 1,
+    "RankRequired": 1,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27773,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 1,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27965,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 1,
+    "ZoneId": 817,
+    "QuestRequired": 69301,
+    "ItemId": 29710,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 28884,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 2,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 28635,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 400,
+    "RankRequired": 3,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 26804,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 817,
+    "QuestRequired": 0,
+    "ItemId": 27899,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27736,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27799,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27800,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 50,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 33274,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 50,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 28972,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27966,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 250,
+    "RankRequired": 1,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 29713,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 28885,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 2,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 30263,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27313,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 818,
+    "QuestRequired": 0,
+    "ItemId": 27900,
+    "Expansion": "Shadowbringers",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36253,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36264,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36242,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36245,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 2,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 35963,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 35807,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 300,
+    "RankRequired": 3,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 37342,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 36362,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 957,
+    "QuestRequired": 0,
+    "ItemId": 37425,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36254,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36243,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36261,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 2,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 35962,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 35799,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 36361,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 956,
+    "QuestRequired": 0,
+    "ItemId": 37424,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36255,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36203,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36244,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 2,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 35964,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 35805,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 250,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 37389,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 36363,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 37426,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 37427,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 38650,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 958,
+    "QuestRequired": 0,
+    "ItemId": 38651,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36259,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36258,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36257,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 2,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 35965,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 35800,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 36364,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 959,
+    "QuestRequired": 0,
+    "ItemId": 37429,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36630,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36256,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36246,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36260,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 2,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 35967,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 35798,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 200,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 41141,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 50,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 38627,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 200,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36280,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 200,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 70176,
+    "ItemId": 38438,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 36365,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 961,
+    "QuestRequired": 0,
+    "ItemId": 37428,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 2,
+    "RankRequired": 1,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 36262,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 70,
+    "RankRequired": 2,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 35966,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 35801,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 100,
+    "RankRequired": 3,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 40628,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 500,
+    "RankRequired": 3,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 35971,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 200,
+    "RankRequired": 3,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 36267,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 300,
+    "RankRequired": 3,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 37341,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 350,
+    "RankRequired": 3,
+    "ZoneId": 960,
+    "QuestRequired": 0,
+    "ItemId": 36366,
+    "Expansion": "Endwalker",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44053,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44063,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44067,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 90,
+    "RankRequired": 2,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 43607,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 3,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44114,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 44312,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 45009,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 700,
+    "RankRequired": 4,
+    "ZoneId": 1187,
+    "QuestRequired": 0,
+    "ItemId": 43571,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44054,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44064,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44068,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44069,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 90,
+    "RankRequired": 2,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 43608,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 3,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44115,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 44313,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 45010,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 4,
+    "ZoneId": 1188,
+    "QuestRequired": 0,
+    "ItemId": 41819,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44055,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44065,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44070,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 90,
+    "RankRequired": 2,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 43609,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 3,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44121,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 44314,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 45011,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 700,
+    "RankRequired": 4,
+    "ZoneId": 1189,
+    "QuestRequired": 0,
+    "ItemId": 43574,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44027,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44106,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44066,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44071,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 90,
+    "RankRequired": 2,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 43610,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 3,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44117,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44315,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 45012,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 43601,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 300,
+    "RankRequired": 4,
+    "ZoneId": 1190,
+    "QuestRequired": 0,
+    "ItemId": 44479,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44056,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44072,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 90,
+    "RankRequired": 2,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 43611,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 3,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44118,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 44316,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 45013,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 300,
+    "RankRequired": 4,
+    "ZoneId": 1191,
+    "QuestRequired": 0,
+    "ItemId": 43873,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 3,
+    "RankRequired": 1,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44057,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 90,
+    "RankRequired": 2,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 43612,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 150,
+    "RankRequired": 3,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44122,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44317,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 450,
+    "RankRequired": 4,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 45014,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 300,
+    "RankRequired": 4,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 43874,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  },
+  {
+    "Cost": 300,
+    "RankRequired": 4,
+    "ZoneId": 1192,
+    "QuestRequired": 0,
+    "ItemId": 44480,
+    "Expansion": "Dawntrail",
+    "IsAllItems": false
+  }
+]

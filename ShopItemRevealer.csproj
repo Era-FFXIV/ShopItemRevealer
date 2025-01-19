@@ -1,6 +1,6 @@
-﻿<Project Sdk="Dalamud.NET.Sdk/11.0.0">
+﻿<Project Sdk="Dalamud.NET.Sdk/11.2.0">
   <PropertyGroup>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Description>ShopItemRevealer</Description>
     <TargetFramework>net8.0-windows</TargetFramework>
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -8,13 +8,13 @@
     <Nullable>enable</Nullable>
     <Platforms>AnyCPU;x64</Platforms>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Era-FFXIV/ShopItemRevealer/</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Private>False</Private>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Data\items.json" />
+    <EmbeddedResource Include="Data\FateItems.json" />
   </ItemGroup>
 
   <ItemGroup>
