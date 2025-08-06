@@ -1,14 +1,13 @@
 ﻿using System.Numerics;
 using Dalamud.Interface.Windowing;
 using Dalamud.Interface.Utility.Raii;
-using ImGuiNET;
+using Dalamud.Bindings.ImGui;
 using ShopItemRevealer.Configuration;
 using ShopItemRevealer.Game;
 using ShopItemRevealer.Game.Shops;
 using Dalamud.Game.Text.SeStringHandling;
 using ShopItemRevealer.Game.Player;
 using Newtonsoft.Json;
-using Dalamud.Interface;
 
 
 namespace ShopItemRevealer.UI.Windows
@@ -204,7 +203,7 @@ namespace ShopItemRevealer.UI.Windows
             // item
             using (ImRaii.ItemWidth(itemNameColumnWidth))
             {
-                if (item.GetItemIcon() != null) ImGui.Image(item.GetItemIcon().ImGuiHandle, WindowManager.IconSize);
+                if (item.GetItemIcon() != null) ImGui.Image(item.GetItemIcon().Handle, WindowManager.IconSize);
                 else ImGui.Dummy(WindowManager.LineIconSize);
                 ImGui.SameLine();
                 ImGui.AlignTextToFramePadding();

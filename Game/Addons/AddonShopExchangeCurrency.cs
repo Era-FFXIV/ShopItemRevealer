@@ -26,7 +26,8 @@ namespace ShopItemRevealer.Game.Addons
 
         private void OnPostDraw(AddonEvent type, AddonArgs args)
         {
-            var addon = (AtkUnitBase*)args.Addon;
+            var gameAddon = Dalamud.GameGui.GetAddonByName("ShopExchangeCurrency", 1);
+            var addon = (AtkUnitBase*)gameAddon.Address;
             var pos = new Vector2(addon->X, addon->Y);
             Position = pos;
             Width = addon->RootNode->GetWidth() * addon->Scale;

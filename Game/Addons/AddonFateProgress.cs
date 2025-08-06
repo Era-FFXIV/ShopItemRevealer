@@ -26,7 +26,8 @@ namespace ShopItemRevealer.Game.Addons
             if (IsOpen && PlayerManager.HasFateRanksInitialized) return;
             unsafe
             {
-                var addon = (AtkUnitBase*)args.Addon;
+                var gameAddon = GameGui.GetAddonByName("FateProgress", 1);
+                var addon = (AtkUnitBase*)gameAddon.Address;
                 if (addon == null)
                 {
                     return;
