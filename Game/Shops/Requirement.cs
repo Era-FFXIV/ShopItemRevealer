@@ -27,7 +27,7 @@ namespace ShopItemRevealer.Game.Shops
                     return $"Quest: {RequirementObject.Name}";
                 case LockedReasonType.BeastTribe:
                     BeastTribeItem tribe = (BeastTribeItem)RequirementObject;
-                    var currentRep = ReputationManager.GetReputation(tribe.BeastTribe.Id).Value;
+                    var currentRep = ReputationManager.GetReputation(tribe.BeastTribe.Id).ReputationValue;
                     if (tribe.RequiredReputation == 0) return "Allied Society Quest";
                     return $"Reputation: {tribe.Quest!.BeastReputationRankName} ({currentRep}/{tribe.RequiredReputation})";
                 case LockedReasonType.FateRank:
@@ -74,7 +74,7 @@ namespace ShopItemRevealer.Game.Shops
                     return q.IsCompleted;
                 case LockedReasonType.BeastTribe:
                     BeastTribeItem tribe = (BeastTribeItem)RequirementObject;
-                    return ReputationManager.GetReputation(tribe.BeastTribe.Id).Value >= tribe.RequiredReputation;
+                    return ReputationManager.GetReputation(tribe.BeastTribe.Id).ReputationValue >= tribe.RequiredReputation;
                 case LockedReasonType.FateRank:
                     FateShopItem fateRank = (FateShopItem)RequirementObject;
                     var territoryId = fateRank.TerritoryId == 0 ? Dalamud.ClientState.TerritoryType : fateRank.TerritoryId;

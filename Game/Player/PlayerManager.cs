@@ -104,11 +104,11 @@ namespace ShopItemRevealer.Game.Player
         internal static int GetQuestsNeededForRank(BeastTribe tribe, uint targetReputation)
         {
             var quests = SheetManager.QuestSheet.Where(x => x.BeastTribe.RowId == tribe.Id).ToList();
-            var currentRank = GetReputation(tribe.Id);
-            double neededReputation = targetReputation - currentRank.Value;
+            var crep = GetReputation(tribe.Id);
+            double neededReputation = targetReputation - crep.ReputationValue;
             // for each rank, determine the quests needed to rank up
             int questCount = 0;
-            for (var i = currentRank.Rank; i < tribe.MaxRank; i++)
+            for (var i = crep.Rank; i < tribe.MaxRank; i++)
             {
                 var rep = SheetManager.BeastReputationRankSheet.GetRow((uint)i);
                 var questPool = quests.Where(x => x.BeastReputationRank.RowId == i).ToList();
