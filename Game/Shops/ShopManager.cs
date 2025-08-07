@@ -75,7 +75,9 @@ namespace ShopItemRevealer.Game.Shops
                     Dalamud.Log.Debug($"Special Shop found: {specialShop.RowId}");
                     if (FixedKnownNpcs.TryGetValue(specialShop.RowId, out uint value)) {
                         npcId = value;
-                        Shops.Add(new SpecialShop(specialShop.RowId, new ShopNpc(npcId)));
+                        var shop = new SpecialShop(specialShop.RowId, npc);
+                        Shops.Add(shop);
+                        npc.AddShop(shop);
                         return;
                     }
                     else

@@ -60,7 +60,6 @@ namespace ShopItemRevealer.Game.Player
         internal static uint CalculateReputation(int rank, uint reputation)
         {
             if (rank == 0) return 0;
-            var result = CumulativeReputation[(int)rank - 1] + reputation;
             return CumulativeReputation[(int)rank-1] + reputation;
         }
     }
