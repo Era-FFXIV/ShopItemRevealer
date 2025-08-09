@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Dalamud.NET.Sdk/13.0.0">
   <PropertyGroup>
-    <Version>1.1.3</Version>
+    <Version>1.1.4</Version>
     <Description>ShopItemRevealer</Description>
     <TargetFramework>net9.0-windows</TargetFramework>
     <OutputPath>bin\$(Configuration)\</OutputPath>
