@@ -45,6 +45,7 @@ namespace ShopItemRevealer
             {
                 manager?.Dispose();
             }
+            ReputationManager.Dispose();
             Configuration.Save();
         }
 

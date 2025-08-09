@@ -1,5 +1,4 @@
-﻿using FFXIVClientStructs.FFXIV.Client.Game;
-using FFXIVClientStructs.FFXIV.Client.Game.UI;
+﻿using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using Newtonsoft.Json;
 
 namespace ShopItemRevealer.Game.Player
@@ -16,6 +15,8 @@ namespace ShopItemRevealer.Game.Player
         internal static List<Reputation> CurrentReputation { get; set; } = [];
         internal static void Initialize()
         {
+            ClientState.Login += OnLogin;
+            ClientState.Logout += OnLogout;
             uint c = 0;
             for (uint i = 0; i < SheetManager.BeastReputationRankSheet.Count; i++)
             {
@@ -25,6 +26,24 @@ namespace ShopItemRevealer.Game.Player
             }
             ScanAllReputations();
         }
+
+        public static void Dispose()
+        {
+            ClientState.Login -= OnLogin;
+            ClientState.Logout -= OnLogout;
+        }
+
+        private static void OnLogout(int type, int code)
+        {
+            CumulativeReputation = [];
+            CurrentReputation = [];
+        }
+
+        internal static void OnLogin() 
+        {
+            ScanAllReputations();
+        }
+
         internal unsafe static void ScanAllReputations()
         {
             if (!PlayerState.Instance()->IsLoaded)
