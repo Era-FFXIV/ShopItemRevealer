@@ -1,5 +1,6 @@
 ﻿using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using Newtonsoft.Json;
+using System.IO;
 using System.Reflection;
 
 namespace ShopItemRevealer.Game.Shops
@@ -33,14 +34,14 @@ namespace ShopItemRevealer.Game.Shops
                 if (shop.Is<Lumina.Excel.Sheets.SpecialShop>() || shop.Is<Lumina.Excel.Sheets.FateShop>())
                 {
                     if (Shops.Any(s => s.ShopId == shop.RowId)) continue;
-                    Dalamud.Log.Debug($"Special Shop found: {shop.RowId}");
+                    Log.Debug($"Special Shop found: {shop.RowId}");
                     var specialShop = new SpecialShop(shop.RowId, npc);
                     Shops.Add(specialShop);
                     npc.AddShop(specialShop);
                 }
                 else
                 {
-                    Dalamud.Log.Debug($"Unhandled shop type {shop.RowId}");
+                    Log.Debug($"Unhandled shop type {shop.RowId}");
                 }
             }
             if (Npcs.Any(n => n.NpcId == npc.NpcId))
@@ -52,10 +53,10 @@ namespace ShopItemRevealer.Game.Shops
             {
                 Npcs.Add(npc);
             }
-            Dalamud.Log.Debug("Scanned {0} ({1})'s shops.", npc.Name, npc.NpcId);
+            Log.Debug("Scanned {0} ({1})'s shops.", npc.Name, npc.NpcId);
             if (!Shops.Any(Shops => Shops.ShopNpc == npc))
             {
-                Dalamud.Log.Debug("No shops found for {0} ({1}), trying fallback.", npc.Name, npc.NpcId);
+                Log.Debug("No shops found for {0} ({1}), trying fallback.", npc.Name, npc.NpcId);
                 DetectAgentShops(npc);
             }
         }
@@ -72,7 +73,7 @@ namespace ShopItemRevealer.Game.Shops
             {
                 if (SheetManager.SpecialShopSheet.TryGetRow(eventHandler.Item1, out var specialShop))
                 {
-                    Dalamud.Log.Debug($"Special Shop found: {specialShop.RowId}");
+                    Log.Debug($"Special Shop found: {specialShop.RowId}");
                     if (FixedKnownNpcs.TryGetValue(specialShop.RowId, out uint value)) {
                         npcId = value;
                         var shop = new SpecialShop(specialShop.RowId, npc);
@@ -86,14 +87,14 @@ namespace ShopItemRevealer.Game.Shops
                         {
                             npc.KnownShops.Add(new SpecialShop(specialShop.RowId, npc));
                             Shops.Add(new SpecialShop(specialShop.RowId, npc));
-                            Dalamud.Log.Debug("Special Shop found: {0} - Added NPC {1}", specialShop.RowId, npc.NpcId);
+                            Log.Debug("Special Shop found: {0} - Added NPC {1}", specialShop.RowId, npc.NpcId);
                             return;
                         }
                     }
                     return;
                 }
             }
-            Dalamud.Log.Debug("No shops found.");
+            Log.Debug("No shops found.");
         }
         public void LoadFateItems()
         {
@@ -102,7 +103,7 @@ namespace ShopItemRevealer.Game.Shops
             using var stream = assembly.GetManifestResourceStream(resourceName);
             if (stream == null)
             {
-                Dalamud.Log.Error("Failed to load item data.");
+                Log.Error("Failed to load item data.");
                 return;
             }
             using var reader = new StreamReader(stream);

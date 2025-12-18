@@ -38,7 +38,7 @@ namespace ShopItemRevealer.UI.Windows
         }
         public void Open(bool isAddonTrigger = false)
         {
-            Dalamud.Log.Debug("MainWindow Open Call");
+            Log.Debug("MainWindow Open Call");
             var gm = (GameManager)Plugin.GetManager<GameManager>();
             if (!IsOpen)
             {
@@ -47,18 +47,18 @@ namespace ShopItemRevealer.UI.Windows
                 var npc = sm.Npcs.FirstOrDefault(n => n.NpcId == gm.LastTarget);
                 if (npc == null)
                 {
-                    Dalamud.ChatGui.PrintError("No supported shops found for this NPC.");
+                    ChatGui.PrintError("No supported shops found for this NPC.");
                     return;
                 }
                 Items = sm.GetShopItems(npc);
                 ReputationManager.ScanAllReputations();
                 if (Items.Count == 0)
                 {
-                    Dalamud.Log.Debug("No items found for this NPC.");
+                    Log.Debug("No items found for this NPC.");
                     return;
                 }
                 UnobtainableItems = Items.Where(i => i.IsUnobtainable).ToList();
-                Dalamud.Log.Verbose($"[DisplayPrep] Unobtainable Items: {UnobtainableItems.Count} - {JsonConvert.SerializeObject(UnobtainableItems)}");
+                Log.Verbose($"[DisplayPrep] Unobtainable Items: {UnobtainableItems.Count} - {JsonConvert.SerializeObject(UnobtainableItems)}");
                 SelectedNpcId = npc.NpcId;
                 ShowOnlyUnobtainableItems = cm.ShowOnlyUnobtainableItems;
                 HideForNpcIds = cm.HideForNpcIds;
@@ -66,15 +66,15 @@ namespace ShopItemRevealer.UI.Windows
                 {
                     if (row.Title.ExtractText() == "Gemstone Trader") IsGemstoneTrader = true;
                 }
-                if (ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0 && isAddonTrigger) { 
-                    Dalamud.Log.Debug("No unrevealed items and ShowOnlyUnobtainableItems is set.");
+                if (ShowOnlyUnobtainableItems && UnobtainableItems.Count == 0 && isAddonTrigger) {
+                    Log.Debug("No unrevealed items and ShowOnlyUnobtainableItems is set.");
                 } else
                 {
                     Toggle();
                 }
             } else
             {
-                Dalamud.Log.Debug("MainWindow Already Open");
+                Log.Debug("MainWindow Already Open");
             }
         }
         public void Close()
@@ -94,7 +94,7 @@ namespace ShopItemRevealer.UI.Windows
         
         public override void OnOpen()
         {
-            Dalamud.Log.Debug("MainWindow Opened");
+            Log.Debug("MainWindow Opened");
         }
         public override void OnClose()
         {
@@ -210,7 +210,7 @@ namespace ShopItemRevealer.UI.Windows
                 ImGui.SetCursorPosY(ImGui.GetCursorPosY() + 4.0f * WindowManager.Scale);
                 var selected = ImGui.Selectable(item.ItemName, false, ImGuiSelectableFlags.None);
                 CreateContextMenu(item);
-                if (selected) Dalamud.ChatGui.Print(SeString.CreateItemLink(item.ItemId));
+                if (selected) ChatGui.Print(SeString.CreateItemLink(item.ItemId));
             }
             ImGui.TableNextColumn();
             // cost

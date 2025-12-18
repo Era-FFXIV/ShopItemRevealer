@@ -17,12 +17,12 @@ namespace ShopItemRevealer.Game.Shops
         }
         internal ShopNpc(IGameObject npc)
         {
-            NpcId = npc.DataId;
+            NpcId = npc.BaseId;
             Name = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(SheetManager.ENpcResidentSheet.GetRow(NpcId).Singular.ExtractText());
         }
         internal ENpcBase GetNpcData()
         {
-            return Dalamud.DataManager.GetExcelSheet<ENpcBase>().GetRow(NpcId);
+            return DataManager.GetExcelSheet<ENpcBase>().GetRow(NpcId);
         }
         internal void AddShop(IShop shop)
         {

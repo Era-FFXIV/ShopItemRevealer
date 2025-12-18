@@ -11,12 +11,12 @@ namespace ShopItemRevealer.UI.Commands
         public void Initialize(ShopItemRevealer plugin)
         {
             Plugin = plugin;
-            Dalamud.CommandManager.AddHandler("/shopitemrevealer", new CommandInfo(OnCommand)
+            Service.CommandManager.AddHandler("/shopitemrevealer", new CommandInfo(OnCommand)
             {
                 ShowInHelp = false, // alias for /shopitems
                 HelpMessage = "Opens the Shop Item Revealer window."
             });
-            Dalamud.CommandManager.AddHandler("/shopitems", new CommandInfo(OnCommand)
+            Service.CommandManager.AddHandler("/shopitems", new CommandInfo(OnCommand)
             {
                 HelpMessage = "Opens the Shop Item Revealer window.",
             });
@@ -25,9 +25,9 @@ namespace ShopItemRevealer.UI.Commands
         {
             if (command == "/shopitemrevealer" || command == "/shopitems")
             {
-                if (Dalamud.Target.Target == null)
+                if (Target.Target == null)
                 {
-                    Dalamud.ChatGui.PrintError("No target selected.");
+                    ChatGui.PrintError("No target selected.");
                     return;
                 }
                 var ui = (UIManager)Plugin.GetManager<UIManager>();

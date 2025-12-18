@@ -9,17 +9,16 @@ namespace ShopItemRevealer.Game.Player
         internal static List<BeastTribe> BeastTribes { get; private set; } = [];
         internal static List<FateRank> FateRanks { get; private set; } = [];
         internal static bool HasFateRanksInitialized => FateRanks.Count > 0;
-        private static ulong CharacterId { get; set; } = 0;
+        private static ulong CharacterId => PlayerState.ContentId;
 
         public void Initialize(ShopItemRevealer plugin)
         {
-            Dalamud.ClientState.Login += OnLogin;
-            Dalamud.ClientState.Logout += OnLogout;
-            Dalamud.Framework.RunOnFrameworkThread(() =>
+            ClientState.Login += OnLogin;
+            ClientState.Logout += OnLogout;
+            Framework.RunOnFrameworkThread(() =>
             {
-                if (Dalamud.ClientState.LocalPlayer != null)
+                if (PlayerState.IsLoaded)
                 {
-                    CharacterId = Dalamud.ClientState.LocalContentId;
                     FateRanks = FateRank.FromJson();
                 }
             });
@@ -30,12 +29,11 @@ namespace ShopItemRevealer.Game.Player
             Quests = [];
             Achievements = [];
             BeastTribes = [];
-            Dalamud.ClientState.Login -= OnLogin;
-            Dalamud.ClientState.Logout -= OnLogout;
+            ClientState.Login -= OnLogin;
+            ClientState.Logout -= OnLogout;
         }
         private void OnLogin()
         {
-            CharacterId = Dalamud.ClientState.LocalContentId;
             FateRanks = FateRank.FromJson();
         }
         private void OnLogout(int _, int __)
@@ -120,21 +118,21 @@ namespace ShopItemRevealer.Game.Player
                     repGiven = questPool.Max(x => x.ReputationReward);
                 }
                 double maxThisLevel = rep.RequiredReputation;
-                Dalamud.Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Rank {i} - Required: {neededReputation} - RepGiven: {repGiven} - Max this level: {maxThisLevel}");
+                Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Rank {i} - Required: {neededReputation} - RepGiven: {repGiven} - Max this level: {maxThisLevel}");
                 if (maxThisLevel < neededReputation)
                 {
                     questCount += (int)Math.Ceiling(maxThisLevel / repGiven);
                     neededReputation -= maxThisLevel;
-                    Dalamud.Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Rank {i} - Quests: {questCount} - Calculation: {maxThisLevel}/{repGiven} - Remaining: {neededReputation}");
+                    Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Rank {i} - Quests: {questCount} - Calculation: {maxThisLevel}/{repGiven} - Remaining: {neededReputation}");
                     continue;
                 } else
                 {
                     questCount += (int)Math.Ceiling(neededReputation / repGiven);
-                    Dalamud.Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Rank {i} - Quests: {questCount} - Final Calculated: {neededReputation}/{repGiven}");
+                    Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Rank {i} - Quests: {questCount} - Final Calculated: {neededReputation}/{repGiven}");
                     break;
                 }
             }
-            Dalamud.Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Total Quests: {questCount}");
+            Log.Verbose($"[GetQuestsNeededForRank()] Tribe {tribe.Name} - Total Quests: {questCount}");
             return questCount;
         }
         internal static FateRank? GetFateRank(uint id)

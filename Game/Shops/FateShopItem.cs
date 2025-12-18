@@ -33,7 +33,7 @@ namespace ShopItemRevealer.Game.Shops
             else
             {
                 Name = "Unknown";
-                Dalamud.Log.Error($"[WikiFateItem] Item {ItemId} not found.");
+                Log.Error($"[WikiFateItem] Item {ItemId} not found.");
             }
             if (TerritoryId != 0 && SheetManager.TerritoryTypeSheet.TryGetRow((uint)TerritoryId, out var territory))
             {
@@ -63,7 +63,7 @@ namespace ShopItemRevealer.Game.Shops
         internal FateShopItem(WikiFateItem fateItem)
         {
             Item = fateItem;
-            Dalamud.Log.Verbose($"FateShopItem: {Item.Name} - ItemId: {ItemId} - TerritoryId: {TerritoryId}");
+            Log.Verbose($"FateShopItem: {Item.Name} - ItemId: {ItemId} - TerritoryId: {TerritoryId}");
         }
     }
 }

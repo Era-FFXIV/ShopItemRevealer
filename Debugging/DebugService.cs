@@ -1,6 +1,7 @@
 ﻿using Dalamud.Game.Command;
 using Newtonsoft.Json;
 using ShopItemRevealer.Game.Shops;
+using System.IO;
 
 namespace ShopItemRevealer.Debugging
 {
@@ -11,11 +12,11 @@ namespace ShopItemRevealer.Debugging
         public void Initialize(ShopItemRevealer plugin)
         {
             Plugin = plugin;
-            if (Dalamud.PluginInterface.IsDev || Dalamud.PluginInterface.IsTesting)
+            if (PluginInterface.IsDev || PluginInterface.IsTesting)
             {
-                Dalamud.Log.Information("Debug Service initialized as you are using a testing version of the plugin. Additional commands are available for troubleshooting.");
+                Log.Information("Debug Service initialized as you are using a testing version of the plugin. Additional commands are available for troubleshooting.");
 
-                Dalamud.CommandManager.AddHandler("/shopdebug", new CommandInfo(OnCommand)
+                CommandManager.AddHandler("/shopdebug", new CommandInfo(OnCommand)
                 {
                     HelpMessage = "Shop Item Revealer debug commands."
                 });
@@ -29,8 +30,8 @@ namespace ShopItemRevealer.Debugging
                     DumpManagerCache();
                     break;
                 case "help":
-                    Dalamud.Log.Information("Available commands:");
-                    Dalamud.Log.Information("/shopdebug dump - Dumps the current shop cache to file.");
+                    Log.Information("Available commands:");
+                    Log.Information("/shopdebug dump - Dumps the current shop cache to file.");
                     break;
                 default:
                     break;
@@ -39,12 +40,12 @@ namespace ShopItemRevealer.Debugging
         private void DumpManagerCache()
         {
             var sh = (ShopManager)Plugin.GetManager<ShopManager>();
-            File.WriteAllText($"{Dalamud.PluginInterface.GetPluginConfigDirectory()}/shops.json", JsonConvert.SerializeObject(sh.Shops, Formatting.Indented));
-            Dalamud.ChatGui.Print($"Shop cache dumped to {Dalamud.PluginInterface.GetPluginConfigDirectory()}/shops.json");
+            File.WriteAllText($"{PluginInterface.GetPluginConfigDirectory()}/shops.json", JsonConvert.SerializeObject(sh.Shops, Formatting.Indented));
+            ChatGui.Print($"Shop cache dumped to {PluginInterface.GetPluginConfigDirectory()}/shops.json");
         }
         public void Dispose()
         {
-            Dalamud.CommandManager.RemoveHandler("/shopdebug");
+            CommandManager.RemoveHandler("/shopdebug");
         }
     }
 }

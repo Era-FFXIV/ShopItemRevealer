@@ -17,7 +17,7 @@ namespace ShopItemRevealer.Game.Shops
             var sheet = SheetManager.SpecialShopSheet.GetRow(shopId);
             if (sheet.RowId == 0)
             {
-                Dalamud.Log.Error($"Unable to find shop {shopId}");
+                Log.Error($"Unable to find shop {shopId}");
                 return;
             }
             foreach (var item in sheet.Item)
@@ -51,7 +51,7 @@ namespace ShopItemRevealer.Game.Shops
                     reqs.Add(new Requirement(LockedReasonType.BeastTribe, new BeastTribeItem(PlayerManager.GetBeastTribe(item.Quest.Value.BeastTribe.RowId), PlayerManager.GetQuest(item.Quest.RowId))));
                 }
                 var resolved = new ShopItem(ShopId, item.ReceiveItems[0].Item.RowId, itemName, itemCost, reqs, itemData.Icon);
-                Dalamud.Log.Verbose(JsonConvert.SerializeObject(resolved));
+                Log.Verbose(JsonConvert.SerializeObject(resolved));
                 ShopItems.Add(resolved);
             }
         }

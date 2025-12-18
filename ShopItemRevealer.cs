@@ -17,10 +17,10 @@ namespace ShopItemRevealer
         public ShopItemRevealer(IDalamudPluginInterface pluginInterface)
         {
             PluginInterface = pluginInterface;
-            PluginInterface.Create<Dalamud>();
-            Dalamud.Log.Debug($"{Name} v{Assembly.GetExecutingAssembly().GetName().Version} loaded.");
-            PluginDataPath = Dalamud.PluginInterface.GetPluginConfigDirectory();
-            Configuration = Dalamud.PluginInterface.GetPluginConfig() as ConfigurationManager ?? new ConfigurationManager();
+            PluginInterface.Create<Service>();
+            Log.Debug($"{Name} v{Assembly.GetExecutingAssembly().GetName().Version} loaded.");
+            PluginDataPath = Service.PluginInterface.GetPluginConfigDirectory();
+            Configuration = Service.PluginInterface.GetPluginConfig() as ConfigurationManager ?? new ConfigurationManager();
             Managers =
             [
                 Configuration,
@@ -33,7 +33,7 @@ namespace ShopItemRevealer
             ];
             foreach (var manager in Managers)
             {
-                Dalamud.Log.Debug($"Initializing {manager.GetType().Name}...");
+                Log.Debug($"Initializing {manager.GetType().Name}...");
                 manager.Initialize(this);
             }
             ReputationManager.Initialize();

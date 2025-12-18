@@ -32,9 +32,9 @@ namespace ShopItemRevealer.Game.Shops
                     return $"Reputation: {tribe.Quest!.BeastReputationRankName} ({currentRep}/{tribe.RequiredReputation})";
                 case LockedReasonType.FateRank:
                     FateShopItem fateRank = (FateShopItem)RequirementObject;
-                    var currentRank = PlayerManager.GetFateRank(fateRank.Item.IsAllItems ? Dalamud.ClientState.TerritoryType : fateRank.TerritoryId);
+                    var currentRank = PlayerManager.GetFateRank(fateRank.Item.IsAllItems ? ClientState.TerritoryType : fateRank.TerritoryId);
                     var zoneName = fateRank.Item.ZoneName;
-                    if (fateRank.Item.IsAllItems) zoneName = SheetManager.TerritoryTypeSheet.GetRow(Dalamud.ClientState.TerritoryType).PlaceName.Value.Name.ExtractText();
+                    if (fateRank.Item.IsAllItems) zoneName = SheetManager.TerritoryTypeSheet.GetRow(ClientState.TerritoryType).PlaceName.Value.Name.ExtractText();
                     if (currentRank == null) return $"Shared FATE Rank ({zoneName}): {fateRank.Item.RankRequired} - Yours: 0";
                     return $"Shared FATE Rank ({zoneName}): {fateRank.Item.RankRequired} - Yours: {currentRank.Rank}";
                 case LockedReasonType.None:
@@ -77,7 +77,7 @@ namespace ShopItemRevealer.Game.Shops
                     return ReputationManager.GetReputation(tribe.BeastTribe.Id).ReputationValue >= tribe.RequiredReputation;
                 case LockedReasonType.FateRank:
                     FateShopItem fateRank = (FateShopItem)RequirementObject;
-                    var territoryId = fateRank.TerritoryId == 0 ? Dalamud.ClientState.TerritoryType : fateRank.TerritoryId;
+                    var territoryId = fateRank.TerritoryId == 0 ? ClientState.TerritoryType : fateRank.TerritoryId;
                     if (PlayerManager.GetFateRank(territoryId) != null)
                     {
                         return PlayerManager.GetFateRank(territoryId)!.Rank >= fateRank.Item.RankRequired;

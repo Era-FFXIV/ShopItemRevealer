@@ -18,15 +18,15 @@ namespace ShopItemRevealer.Game.Addons
         public AddonShopExchangeCurrency(ShopItemRevealer plugin)
         {
             Plugin = plugin;
-            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PostSetup, ["ShopExchangeCurrency"], OnPostSetup);
-            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PreFinalize, ["ShopExchangeCurrency"], OnFinalize);
-            Dalamud.AddonLifecycle.RegisterListener(AddonEvent.PostDraw, ["ShopExchangeCurrency"], OnPostDraw);
-            Dalamud.ContextMenu.OnMenuOpened += ContextMenuOpened;
+            AddonLifecycle.RegisterListener(AddonEvent.PostSetup, ["ShopExchangeCurrency"], OnPostSetup);
+            AddonLifecycle.RegisterListener(AddonEvent.PreFinalize, ["ShopExchangeCurrency"], OnFinalize);
+            AddonLifecycle.RegisterListener(AddonEvent.PostDraw, ["ShopExchangeCurrency"], OnPostDraw);
+            ContextMenu.OnMenuOpened += ContextMenuOpened;
         }
 
         private void OnPostDraw(AddonEvent type, AddonArgs args)
         {
-            var gameAddon = Dalamud.GameGui.GetAddonByName("ShopExchangeCurrency", 1);
+            var gameAddon = GameGui.GetAddonByName("ShopExchangeCurrency", 1);
             var addon = (AtkUnitBase*)gameAddon.Address;
             var pos = new Vector2(addon->X, addon->Y);
             Position = pos;
@@ -36,20 +36,20 @@ namespace ShopItemRevealer.Game.Addons
 
         private void OnFinalize(AddonEvent type, AddonArgs args)
         {
-            Dalamud.Log.Debug("ShopExchangeCurrency Finalize");
+            Log.Debug("ShopExchangeCurrency Finalize");
             var manager = (UIManager)Plugin.GetManager<UIManager>();
             manager.OnAddonClose(type, args);
         }
 
         private void OnPostSetup(AddonEvent type, AddonArgs args)
         {
-            Dalamud.Log.Debug("ShopExchangeCurrency PostSetup");
+            Log.Debug("ShopExchangeCurrency PostSetup");
             var manager = (UIManager)Plugin.GetManager<UIManager>();
             manager.OnAddonOpen(type, args);
         }
         private void ContextMenuOpened(IMenuOpenedArgs args)
         {
-            Dalamud.Log.Debug("ContextMenuOpened");
+            Log.Debug("ContextMenuOpened");
             if (args.AddonName == "ShopExchangeCurrency")
             {
                 var ui = (UIManager)Plugin.GetManager<UIManager>();
@@ -57,11 +57,11 @@ namespace ShopItemRevealer.Game.Addons
                 {
                     return;
                 }
-                Dalamud.Log.Debug("ShopExchangeCurrency ContextMenuOpened");
-                var target = Dalamud.Target.Target;
+                Log.Debug("ShopExchangeCurrency ContextMenuOpened");
+                var target = Target.Target;
                 if (!target!.IsValid()) return;
                 var sm = (ShopManager)Plugin.GetManager<ShopManager>();
-                if (sm.Shops.Any(s => s.ShopNpc.NpcId == target.DataId))
+                if (sm.Shops.Any(s => s.ShopNpc.NpcId == target.BaseId))
                 {
                     MenuItem item = new()
                     {
@@ -81,11 +81,11 @@ namespace ShopItemRevealer.Game.Addons
 
         public void Dispose()
         {
-            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PostSetup, ["ShopExchangeCurrency"], OnPostSetup);
-            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PreFinalize, ["ShopExchangeCurrency"], OnFinalize);
-            Dalamud.AddonLifecycle.UnregisterListener(AddonEvent.PostDraw, ["ShopExchangeCurrency"], OnPostDraw);
+            AddonLifecycle.UnregisterListener(AddonEvent.PostSetup, ["ShopExchangeCurrency"], OnPostSetup);
+            AddonLifecycle.UnregisterListener(AddonEvent.PreFinalize, ["ShopExchangeCurrency"], OnFinalize);
+            AddonLifecycle.UnregisterListener(AddonEvent.PostDraw, ["ShopExchangeCurrency"], OnPostDraw);
             Position = Vector2.Zero;
-            Dalamud.ContextMenu.OnMenuOpened -= ContextMenuOpened;
+            ContextMenu.OnMenuOpened -= ContextMenuOpened;
         }
     }
 }

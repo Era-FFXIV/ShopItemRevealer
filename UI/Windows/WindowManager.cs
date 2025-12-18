@@ -28,8 +28,8 @@ namespace ShopItemRevealer.UI.Windows
         public void Dispose()
         {
             WindowSystem.RemoveAllWindows();
-            Dalamud.PluginInterface.UiBuilder.Draw -= MainWindow.Draw;
-            Dalamud.PluginInterface.UiBuilder.OpenMainUi -= MainWindow.HandleMainUiOpen;
+            PluginInterface.UiBuilder.Draw -= MainWindow.Draw;
+            PluginInterface.UiBuilder.OpenMainUi -= MainWindow.HandleMainUiOpen;
         }
         public void Initialize(ShopItemRevealer plugin)
         {
@@ -38,8 +38,8 @@ namespace ShopItemRevealer.UI.Windows
             WindowSystem.AddWindow(MainWindow);
             LandingWindow = new("Landing Window - Shop Item Revealer");
             WindowSystem.AddWindow(LandingWindow);
-            Dalamud.PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
-            Dalamud.PluginInterface.UiBuilder.OpenMainUi += LandingWindow.Toggle;
+            PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
+            PluginInterface.UiBuilder.OpenMainUi += LandingWindow.Toggle;
         }
     }
 }

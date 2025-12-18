@@ -28,10 +28,10 @@ namespace ShopItemRevealer.UI
         }
         public void OnAddonOpen(AddonEvent addonEvent, AddonArgs args)
         {
-            Dalamud.Log.Debug("Addon Opened");
-            if (Plugin.Configuration.HideForNpcIds.Contains(Dalamud.Target.Target?.DataId ?? 0))
+            Log.Debug("Addon Opened");
+            if (Plugin.Configuration.HideForNpcIds.Contains(Target.Target?.BaseId ?? 0))
             {
-                Dalamud.Log.Debug("Configured to hide by default, not opening.");
+                Log.Debug("Configured to hide by default, not opening.");
                 return;
             }
             WindowManager.MainWindow.HandleAddonOpen();
@@ -76,7 +76,7 @@ namespace ShopItemRevealer.UI
             }
             catch (Exception e)
             {
-                Dalamud.Log.Error($"Could not open URL:\n{e.Message}");
+                Log.Error($"Could not open URL:\n{e.Message}");
             }
         }
         public static string GarlandToolsItemAddress(uint itemId) => $"https://www.garlandtools.org/db/#item/{itemId}";

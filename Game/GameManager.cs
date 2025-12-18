@@ -14,7 +14,7 @@ namespace ShopItemRevealer.Game
         public uint LastTarget { get; private set; }
         public void Dispose()
         {
-            Dalamud.Framework.Update -= OnFrameworkUpdate;
+            Framework.Update -= OnFrameworkUpdate;
             AddonShopExchangeCurrency.Dispose();
             AddonFateProgress.Dispose();
         }
@@ -24,25 +24,25 @@ namespace ShopItemRevealer.Game
             Plugin = plugin;
             AddonShopExchangeCurrency = new AddonShopExchangeCurrency(plugin);
             AddonFateProgress = new AddonFateProgress(plugin);
-            Dalamud.Framework.Update += OnFrameworkUpdate;
+            Framework.Update += OnFrameworkUpdate;
         }
 
         private void OnFrameworkUpdate(IFramework framework)
         {
-            var target = Dalamud.Target.Target != null ? Dalamud.Target.Target.DataId : 0;
+            var target = Target.Target != null ? Target.Target.BaseId : 0;
             if (target != LastTarget)
             {
                 LastTarget = target;
                 if (target != 0)
                 {
-                    HandleNpcTargeted(Dalamud.Target.Target!);
+                    HandleNpcTargeted(Target.Target!);
                 }
             }
         }
         private void HandleNpcTargeted(IGameObject npc)
         {
             if (npc.ObjectKind != ObjectKind.EventNpc) return;
-            Dalamud.Log.Debug("Npc Targeted: " + npc.Name);
+            Log.Debug("Npc Targeted: " + npc.Name);
             var sm = (ShopManager)Plugin.GetManager<ShopManager>();
             sm.ShopScanner(new ShopNpc(npc));
         }

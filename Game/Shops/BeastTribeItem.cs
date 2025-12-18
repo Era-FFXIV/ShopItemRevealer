@@ -17,8 +17,8 @@ namespace ShopItemRevealer.Game.Shops
             Quest = quest;
             if (quest != null)
             {
-                Dalamud.Log.Verbose($"BeastTribeItem: {BeastTribe.Name} - Quest: {quest.Name}");
-                Dalamud.Log.Verbose(JsonConvert.SerializeObject(quest));
+                Log.Verbose($"BeastTribeItem: {BeastTribe.Name} - Quest: {quest.Name}");
+                Log.Verbose(JsonConvert.SerializeObject(quest));
                 RequiredReputation = ReputationManager.CalculateReputation((int)quest.BeastReputationRank, quest.BeastReputationValue);
             }
         }

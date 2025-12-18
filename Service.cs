@@ -1,4 +1,4 @@
-﻿global using static ShopItemRevealer.Dalamud;
+﻿global using static ShopItemRevealer.Service;
 using Dalamud.Game.ClientState.Objects;
 using Dalamud.IoC;
 using Dalamud.Plugin.Services;
@@ -6,7 +6,7 @@ using Dalamud.Plugin;
 
 namespace ShopItemRevealer
 {
-    internal class Dalamud
+    internal class Service
     {
         [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
         [PluginService] internal static ITextureProvider TextureProvider { get; private set; } = null!;
@@ -23,6 +23,7 @@ namespace ShopItemRevealer
         [PluginService] internal static IObjectTable ObjectTable { get; private set; } = null!;
         [PluginService] internal static IGameInteropProvider GameInteropProvider { get; private set; } = null!;
         [PluginService] internal static IContextMenu ContextMenu { get; private set; } = null!;
+        [PluginService] internal static IPlayerState PlayerState { get; private set; } = null!;
 
     }
 }

@@ -16,7 +16,7 @@ namespace ShopItemRevealer.Game.Shops
         public bool IsUnobtainable => Requirements.Any(r => !r.MeetsRequirement());
         public IDalamudTextureWrap GetItemIcon()
         {
-            return Dalamud.TextureProvider.GetFromGameIcon(new GameIconLookup(ItemIconId)).GetWrapOrEmpty();
+            return TextureProvider.GetFromGameIcon(new GameIconLookup(ItemIconId)).GetWrapOrEmpty();
         }
     }
 }

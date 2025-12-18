@@ -16,7 +16,7 @@ namespace ShopItemRevealer.Configuration
         }
         public void Save()
         {
-            Dalamud.PluginInterface.SavePluginConfig(this);
+            PluginInterface.SavePluginConfig(this);
         }
         public void Dispose()
         {

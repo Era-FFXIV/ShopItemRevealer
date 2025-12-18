@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.IO;
 
 namespace ShopItemRevealer.Game.Player
 {
@@ -23,20 +24,19 @@ namespace ShopItemRevealer.Game.Player
             else
             {
                 ZoneName = "Unknown";
-                Dalamud.Log.Error($"[FateRank] Territory {territoryId} not found.");
+                Log.Error($"[FateRank] Territory {territoryId} not found.");
             }
         }
         public static List<FateRank> FromJson()
         {
-            if (Dalamud.ClientState.LocalPlayer == null)
+            if (!PlayerState.IsLoaded)
             {
-                Dalamud.Log.Debug("LocalPlayer is null");
                 return [];
             }
-            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), $"FateRanks-{Dalamud.ClientState.LocalContentId}.json");
+            var json = Path.Combine(PluginInterface.GetPluginConfigDirectory(), $"FateRanks-{PlayerState.ContentId}.json");
             if (!File.Exists(json))
             {
-                Dalamud.Log.Debug($"File {json} does not exist");
+                Log.Debug($"File {json} does not exist");
                 return [];
             }
             var data = File.ReadAllText(json);
@@ -49,7 +49,7 @@ namespace ShopItemRevealer.Game.Player
         }
         public static void Save(List<FateRank> ranks, ulong CharacterId)
         {
-            var json = Path.Combine(Dalamud.PluginInterface.GetPluginConfigDirectory(), $"FateRanks-{CharacterId}.json");
+            var json = Path.Combine(PluginInterface.GetPluginConfigDirectory(), $"FateRanks-{CharacterId}.json");
             File.WriteAllText(json, JsonConvert.SerializeObject(ranks, Formatting.Indented));
         }
     }

@@ -1,5 +1,6 @@
 ﻿using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using Newtonsoft.Json;
+using CSPlayerState = FFXIVClientStructs.FFXIV.Client.Game.UI.PlayerState;
 
 namespace ShopItemRevealer.Game.Player
 {
@@ -22,7 +23,7 @@ namespace ShopItemRevealer.Game.Player
             {
                 c += SheetManager.BeastReputationRankSheet.GetRow(i).RequiredReputation;
                 CumulativeReputation.Add(c);
-                Dalamud.Log.Verbose($"Rank {i} - Required: {SheetManager.BeastReputationRankSheet.GetRow(i).RequiredReputation} - Cumulative: {c}");
+                Log.Verbose($"Rank {i} - Required: {SheetManager.BeastReputationRankSheet.GetRow(i).RequiredReputation} - Cumulative: {c}");
             }
             ScanAllReputations();
         }
@@ -46,7 +47,7 @@ namespace ShopItemRevealer.Game.Player
 
         internal unsafe static void ScanAllReputations()
         {
-            if (!PlayerState.Instance()->IsLoaded)
+            if (!CSPlayerState.Instance()->IsLoaded)
             {
                 Log.Debug("[ReputationManager] PlayerState is not initialized, cannot scan reputations.");
                 return;
@@ -56,15 +57,15 @@ namespace ShopItemRevealer.Game.Player
             for (uint i = 1; i < SheetManager.BeastTribeSheet.Count; i++)
             {
                 var tribe = PlayerManager.GetBeastTribe(i);
-                var rank = PlayerState.Instance()->GetBeastTribeRank((byte)i);
-                var rep = PlayerState.Instance()->GetBeastTribeCurrentReputation((byte)i);
-                Dalamud.Log.Debug($"Scanning reputation for tribe {tribe.Name} with rank {rank} and value {rep}");
+                var rank = CSPlayerState.Instance()->GetBeastTribeRank((byte)i);
+                var rep = CSPlayerState.Instance()->GetBeastTribeCurrentReputation((byte)i);
+                Log.Debug($"Scanning reputation for tribe {tribe.Name} with rank {rank} and value {rep}");
                 var calculatedRep = CalculateReputation(rank, rep);
                 Log.Debug($"Calculated reputation for tribe {tribe.Name}: {calculatedRep}");
                 scan.Add(new Reputation(tribe, rank, rep));
             }
             CurrentReputation = scan;
-            Dalamud.Log.Verbose($"[ReputationManager] Scanned {CurrentReputation.Count} reputations: {JsonConvert.SerializeObject(CurrentReputation)}");
+            Log.Verbose($"[ReputationManager] Scanned {CurrentReputation.Count} reputations: {JsonConvert.SerializeObject(CurrentReputation)}");
         }
         internal static Reputation GetReputation(uint beastTribeId)
         {
