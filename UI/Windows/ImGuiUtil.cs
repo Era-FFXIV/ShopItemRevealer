@@ -41,12 +41,7 @@ namespace ShopItemRevealer.UI.Windows
                 return;
             }
 
-            using ImRaii.IEndObject endObject = ImRaii.Table(label, columnTitles.Length, flags);
-            if (!endObject)
-            {
-                return;
-            }
-
+            using var table = ImRaii.Table(label, columnTitles.Length, flags);
             foreach (string label2 in columnTitles)
             {
                 ImGui.TableNextColumn();
