@@ -23,7 +23,7 @@ namespace ShopItemRevealer.Game.Shops
         }
         public List<ShopItem> GetShopItems(ShopNpc npc)
         {
-            var itemList = Shops.Where(shop => shop.ShopNpc == npc).SelectMany(shop => shop.ShopItems).ToList();
+            var itemList = Shops.Where(shop => shop.ShopNpc == npc).SelectMany(shop => shop.ShopItems);
             // dedupe based on item ID
             var dedupedList = itemList.GroupBy(item => item.ItemId).Select(group => group.First()).ToList();
             return dedupedList;
@@ -60,21 +60,17 @@ namespace ShopItemRevealer.Game.Shops
             Log.Debug("Scanned {0} ({1})'s shops.", npc.Name, npc.NpcId);
             if (!Shops.Any(Shops => Shops.ShopNpc == npc))
             {
-                foreach (var shop in SheetManager.FateShopSheet)
+                if (SheetManager.FateShopSheet.TryGetRow(npc.NpcId, out var fateShop))
                 {
-                    if (shop.RowId == npc.NpcId)
+                    foreach (var sShop in fateShop.SpecialShop)
                     {
-                        foreach (var sShop in shop.SpecialShop)
-                        {
-                            Log.Debug("Fate Shop found: {0} - Added NPC {1}", shop.RowId, npc.NpcId);
-                            var fateShop = new SpecialShop(sShop.RowId, npc);
-                            Shops.Add(fateShop);
-                            npc.AddShop(fateShop);
-                        }
-                        
+                        Log.Debug("Fate Shop found: {0} - Added NPC {1}", fateShop.RowId, npc.NpcId);
+                        var specialShop = new SpecialShop(sShop.RowId, npc);
+                        Shops.Add(specialShop);
+                        npc.AddShop(specialShop);
                     }
                 }
-                if (npc.KnownShops.Count == 0)
+                else
                 {
                     Log.Debug("No shops found for {0} ({1}), trying fallback.", npc.Name, npc.NpcId);
                     DetectAgentShops(npc);
