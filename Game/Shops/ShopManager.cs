@@ -1,4 +1,5 @@
 ﻿using FFXIVClientStructs.FFXIV.Client.Game.Event;
+using Lumina.Extensions;
 using Newtonsoft.Json;
 using System.IO;
 using System.Reflection;
@@ -22,7 +23,10 @@ namespace ShopItemRevealer.Game.Shops
         }
         public List<ShopItem> GetShopItems(ShopNpc npc)
         {
-            return Shops.Where(shop => shop.ShopNpc == npc).SelectMany(shop => shop.ShopItems).ToList();
+            var itemList = Shops.Where(shop => shop.ShopNpc == npc).SelectMany(shop => shop.ShopItems).ToList();
+            // dedupe based on item ID
+            var dedupedList = itemList.GroupBy(item => item.ItemId).Select(group => group.First()).ToList();
+            return dedupedList;
         }
         public void ShopScanner(ShopNpc npc)
         {
@@ -56,8 +60,26 @@ namespace ShopItemRevealer.Game.Shops
             Log.Debug("Scanned {0} ({1})'s shops.", npc.Name, npc.NpcId);
             if (!Shops.Any(Shops => Shops.ShopNpc == npc))
             {
-                Log.Debug("No shops found for {0} ({1}), trying fallback.", npc.Name, npc.NpcId);
-                DetectAgentShops(npc);
+                foreach (var shop in SheetManager.FateShopSheet)
+                {
+                    if (shop.RowId == npc.NpcId)
+                    {
+                        foreach (var sShop in shop.SpecialShop)
+                        {
+                            Log.Debug("Fate Shop found: {0} - Added NPC {1}", shop.RowId, npc.NpcId);
+                            var fateShop = new SpecialShop(sShop.RowId, npc);
+                            Shops.Add(fateShop);
+                            npc.AddShop(fateShop);
+                        }
+                        
+                    }
+                }
+                if (npc.KnownShops.Count == 0)
+                {
+                    Log.Debug("No shops found for {0} ({1}), trying fallback.", npc.Name, npc.NpcId);
+                    DetectAgentShops(npc);
+                }
+                
             }
         }
         public Dictionary<uint, uint> FixedKnownNpcs = new Dictionary<uint, uint>()

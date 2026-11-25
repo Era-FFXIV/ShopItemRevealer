@@ -25,6 +25,7 @@ namespace ShopItemRevealer.Game.Shops
                 var itemData = SheetManager.ItemSheet.GetRow(item.ReceiveItems[0].Item.RowId);
                 var itemName = itemData.Name.ExtractText();
                 if (itemName == "") continue;
+                if (ShopItems.FirstOrDefault(x => x.ItemId == itemData.RowId) != null) continue;
                 var itemCost = item.ItemCosts[0].CurrencyCost;
                 List<Requirement> reqs = [];
                 var shopManager = (ShopManager)ShopItemRevealer.Managers.First(x => x is ShopManager);

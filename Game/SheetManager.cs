@@ -17,6 +17,7 @@ namespace ShopItemRevealer.Game
         internal static ExcelSheet<BeastTribe> BeastTribeSheet { get; } = DataManager.GetExcelSheet<BeastTribe>();
         internal static ExcelSheet<BeastReputationRank> BeastReputationRankSheet { get; } = DataManager.GetExcelSheet<BeastReputationRank>();
         internal static ExcelSheet<PlaceName> PlaceNameSheet { get; } = DataManager.GetExcelSheet<PlaceName>();
+        internal static ExcelSheet<FateShop> FateShopSheet { get; } = DataManager.GetExcelSheet<FateShop>();
         public void Dispose()
         {
         }
