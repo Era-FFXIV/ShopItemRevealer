@@ -21,7 +21,7 @@ namespace ShopItemRevealer.Game.Player
             var questInfo = SheetManager.QuestSheet.GetRow(Id);
             if (questInfo.RowId == 0)
             {
-                Log.Warning($"Unable to find quest {Id}");
+                Log.Debug($"Unable to find quest {Id}");
                 Name = "Unknown Quest";
                 return;
             }

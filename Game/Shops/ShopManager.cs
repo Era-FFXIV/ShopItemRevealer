@@ -38,14 +38,14 @@ namespace ShopItemRevealer.Game.Shops
                 if (shop.Is<Lumina.Excel.Sheets.SpecialShop>() || shop.Is<Lumina.Excel.Sheets.FateShop>())
                 {
                     if (Shops.Any(s => s.ShopId == shop.RowId)) continue;
-                    Log.Debug($"Special Shop found: {shop.RowId}");
+                    Log.Verbose($"Special Shop found: {shop.RowId}");
                     var specialShop = new SpecialShop(shop.RowId, npc);
                     Shops.Add(specialShop);
                     npc.AddShop(specialShop);
                 }
                 else
                 {
-                    Log.Debug($"Unhandled shop type {shop.RowId}");
+                    Log.Verbose($"Unhandled shop type {shop.RowId}");
                 }
             }
             if (Npcs.Any(n => n.NpcId == npc.NpcId))

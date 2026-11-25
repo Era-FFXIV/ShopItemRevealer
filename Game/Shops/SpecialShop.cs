@@ -17,7 +17,7 @@ namespace ShopItemRevealer.Game.Shops
             var sheet = SheetManager.SpecialShopSheet.GetRow(shopId);
             if (sheet.RowId == 0)
             {
-                Log.Error($"Unable to find shop {shopId}");
+                Log.Debug($"Unable to find shop {shopId}");
                 return;
             }
             foreach (var item in sheet.Item)
